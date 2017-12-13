@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD3F41FE1616700AFB33B /* AppDelegate.swift */; };
+		767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD3F61FE1616700AFB33B /* ViewController.swift */; };
+		767AD3FA1FE1616800AFB33B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767AD3F81FE1616800AFB33B /* Main.storyboard */; };
+		767AD3FC1FE1616800AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD3FB1FE1616800AFB33B /* Assets.xcassets */; };
+		767AD3FF1FE1616800AFB33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */; };
+		767AD40A1FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4091FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.swift */; };
+		767AD40F1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 767AD40E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app */; };
+		767AD4151FE1616900AFB33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767AD4131FE1616900AFB33B /* Interface.storyboard */; };
+		767AD4171FE1616900AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD4161FE1616900AFB33B /* Assets.xcassets */; };
+		767AD41E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		767AD4251FE1616900AFB33B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4241FE1616900AFB33B /* InterfaceController.swift */; };
+		767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */; };
+		767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4281FE1616900AFB33B /* NotificationController.swift */; };
+		767AD42B1FE1616A00AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD42A1FE1616A00AFB33B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		767AD4061FE1616900AFB33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 767AD3E91FE1615E00AFB33B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 767AD3F01FE1615F00AFB33B;
+			remoteInfo = KeepTalkingAndNobodyExplodes;
+		};
+		767AD4101FE1616900AFB33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 767AD3E91FE1615E00AFB33B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 767AD40D1FE1616900AFB33B;
+			remoteInfo = "KeepTalkingAndNobodyExplodes WatchKit App";
+		};
+		767AD41F1FE1616900AFB33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 767AD3E91FE1615E00AFB33B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 767AD41C1FE1616900AFB33B;
+			remoteInfo = "KeepTalkingAndNobodyExplodes WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		767AD4321FE1616A00AFB33B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				767AD41E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD4361FE1616A00AFB33B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				767AD40F1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		767AD3F11FE1616600AFB33B /* KeepTalkingAndNobodyExplodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepTalkingAndNobodyExplodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		767AD3F41FE1616700AFB33B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		767AD3F61FE1616700AFB33B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		767AD3F91FE1616800AFB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		767AD3FB1FE1616800AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		767AD3FE1FE1616800AFB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		767AD4001FE1616800AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767AD4051FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepTalkingAndNobodyExplodesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		767AD4091FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepTalkingAndNobodyExplodesTests.swift; sourceTree = "<group>"; };
+		767AD40B1FE1616900AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767AD40E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KeepTalkingAndNobodyExplodes WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		767AD4141FE1616900AFB33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		767AD4161FE1616900AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		767AD4181FE1616900AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KeepTalkingAndNobodyExplodes WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		767AD4231FE1616900AFB33B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		767AD4241FE1616900AFB33B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		767AD4281FE1616900AFB33B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		767AD42A1FE1616A00AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		767AD42C1FE1616A00AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		767AD3EE1FE1615F00AFB33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD4021FE1616900AFB33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD41A1FE1616900AFB33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		767AD3E81FE1615E00AFB33B = {
+			isa = PBXGroup;
+			children = (
+				767AD3F31FE1616600AFB33B /* KeepTalkingAndNobodyExplodes */,
+				767AD4081FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests */,
+				767AD4121FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */,
+				767AD4211FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */,
+				767AD3F21FE1616600AFB33B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		767AD3F21FE1616600AFB33B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				767AD3F11FE1616600AFB33B /* KeepTalkingAndNobodyExplodes.app */,
+				767AD4051FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.xctest */,
+				767AD40E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app */,
+				767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		767AD3F31FE1616600AFB33B /* KeepTalkingAndNobodyExplodes */ = {
+			isa = PBXGroup;
+			children = (
+				767AD3F41FE1616700AFB33B /* AppDelegate.swift */,
+				767AD3F61FE1616700AFB33B /* ViewController.swift */,
+				767AD3F81FE1616800AFB33B /* Main.storyboard */,
+				767AD3FB1FE1616800AFB33B /* Assets.xcassets */,
+				767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */,
+				767AD4001FE1616800AFB33B /* Info.plist */,
+			);
+			path = KeepTalkingAndNobodyExplodes;
+			sourceTree = "<group>";
+		};
+		767AD4081FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests */ = {
+			isa = PBXGroup;
+			children = (
+				767AD4091FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.swift */,
+				767AD40B1FE1616900AFB33B /* Info.plist */,
+			);
+			path = KeepTalkingAndNobodyExplodesTests;
+			sourceTree = "<group>";
+		};
+		767AD4121FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				767AD4131FE1616900AFB33B /* Interface.storyboard */,
+				767AD4161FE1616900AFB33B /* Assets.xcassets */,
+				767AD4181FE1616900AFB33B /* Info.plist */,
+			);
+			path = "KeepTalkingAndNobodyExplodes WatchKit App";
+			sourceTree = "<group>";
+		};
+		767AD4211FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				767AD4241FE1616900AFB33B /* InterfaceController.swift */,
+				767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */,
+				767AD4281FE1616900AFB33B /* NotificationController.swift */,
+				767AD42A1FE1616A00AFB33B /* Assets.xcassets */,
+				767AD42C1FE1616A00AFB33B /* Info.plist */,
+				767AD4221FE1616900AFB33B /* Supporting Files */,
+			);
+			path = "KeepTalkingAndNobodyExplodes WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		767AD4221FE1616900AFB33B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				767AD4231FE1616900AFB33B /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		767AD3F01FE1615F00AFB33B /* KeepTalkingAndNobodyExplodes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767AD4371FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes" */;
+			buildPhases = (
+				767AD3ED1FE1615F00AFB33B /* Sources */,
+				767AD3EE1FE1615F00AFB33B /* Frameworks */,
+				767AD3EF1FE1615F00AFB33B /* Resources */,
+				767AD4361FE1616A00AFB33B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				767AD4111FE1616900AFB33B /* PBXTargetDependency */,
+			);
+			name = KeepTalkingAndNobodyExplodes;
+			productName = KeepTalkingAndNobodyExplodes;
+			productReference = 767AD3F11FE1616600AFB33B /* KeepTalkingAndNobodyExplodes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		767AD4041FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767AD43A1FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodesTests" */;
+			buildPhases = (
+				767AD4011FE1616900AFB33B /* Sources */,
+				767AD4021FE1616900AFB33B /* Frameworks */,
+				767AD4031FE1616900AFB33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				767AD4071FE1616900AFB33B /* PBXTargetDependency */,
+			);
+			name = KeepTalkingAndNobodyExplodesTests;
+			productName = KeepTalkingAndNobodyExplodesTests;
+			productReference = 767AD4051FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		767AD40D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767AD4331FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes WatchKit App" */;
+			buildPhases = (
+				767AD40C1FE1616900AFB33B /* Resources */,
+				767AD4321FE1616A00AFB33B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				767AD4201FE1616900AFB33B /* PBXTargetDependency */,
+			);
+			name = "KeepTalkingAndNobodyExplodes WatchKit App";
+			productName = "KeepTalkingAndNobodyExplodes WatchKit App";
+			productReference = 767AD40E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		767AD41C1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767AD42F1FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes WatchKit Extension" */;
+			buildPhases = (
+				767AD4191FE1616900AFB33B /* Sources */,
+				767AD41A1FE1616900AFB33B /* Frameworks */,
+				767AD41B1FE1616900AFB33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KeepTalkingAndNobodyExplodes WatchKit Extension";
+			productName = "KeepTalkingAndNobodyExplodes WatchKit Extension";
+			productReference = 767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		767AD3E91FE1615E00AFB33B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Salomé Russier";
+				TargetAttributes = {
+					767AD3F01FE1615F00AFB33B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 37REKZLEH3;
+						ProvisioningStyle = Automatic;
+					};
+					767AD4041FE1616900AFB33B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 37REKZLEH3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 767AD3F01FE1615F00AFB33B;
+					};
+					767AD40D1FE1616900AFB33B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 37REKZLEH3;
+						ProvisioningStyle = Automatic;
+					};
+					767AD41C1FE1616900AFB33B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 37REKZLEH3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 767AD3EC1FE1615E00AFB33B /* Build configuration list for PBXProject "KeepTalkingAndNobodyExplodes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 767AD3E81FE1615E00AFB33B;
+			productRefGroup = 767AD3F21FE1616600AFB33B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				767AD3F01FE1615F00AFB33B /* KeepTalkingAndNobodyExplodes */,
+				767AD4041FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests */,
+				767AD40D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */,
+				767AD41C1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		767AD3EF1FE1615F00AFB33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD3FF1FE1616800AFB33B /* LaunchScreen.storyboard in Resources */,
+				767AD3FC1FE1616800AFB33B /* Assets.xcassets in Resources */,
+				767AD3FA1FE1616800AFB33B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD4031FE1616900AFB33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD40C1FE1616900AFB33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD4171FE1616900AFB33B /* Assets.xcassets in Resources */,
+				767AD4151FE1616900AFB33B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD41B1FE1616900AFB33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD42B1FE1616A00AFB33B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		767AD3ED1FE1615F00AFB33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */,
+				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD4011FE1616900AFB33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD40A1FE1616900AFB33B /* KeepTalkingAndNobodyExplodesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767AD4191FE1616900AFB33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */,
+				767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */,
+				767AD4251FE1616900AFB33B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		767AD4071FE1616900AFB33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 767AD3F01FE1615F00AFB33B /* KeepTalkingAndNobodyExplodes */;
+			targetProxy = 767AD4061FE1616900AFB33B /* PBXContainerItemProxy */;
+		};
+		767AD4111FE1616900AFB33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 767AD40D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */;
+			targetProxy = 767AD4101FE1616900AFB33B /* PBXContainerItemProxy */;
+		};
+		767AD4201FE1616900AFB33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 767AD41C1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */;
+			targetProxy = 767AD41F1FE1616900AFB33B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		767AD3F81FE1616800AFB33B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767AD3F91FE1616800AFB33B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767AD3FE1FE1616800AFB33B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		767AD4131FE1616900AFB33B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767AD4141FE1616900AFB33B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		767AD42D1FE1616A00AFB33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		767AD42E1FE1616A00AFB33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		767AD4301FE1616A00AFB33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = "KeepTalkingAndNobodyExplodes WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		767AD4311FE1616A00AFB33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = "KeepTalkingAndNobodyExplodes WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		767AD4341FE1616A00AFB33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				IBSC_MODULE = KeepTalkingAndNobodyExplodes_WatchKit_Extension;
+				INFOPLIST_FILE = "KeepTalkingAndNobodyExplodes WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		767AD4351FE1616A00AFB33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				IBSC_MODULE = KeepTalkingAndNobodyExplodes_WatchKit_Extension;
+				INFOPLIST_FILE = "KeepTalkingAndNobodyExplodes WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		767AD4381FE1616A00AFB33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = KeepTalkingAndNobodyExplodes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		767AD4391FE1616A00AFB33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = KeepTalkingAndNobodyExplodes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		767AD43B1FE1616A00AFB33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = KeepTalkingAndNobodyExplodesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepTalkingAndNobodyExplodes.app/KeepTalkingAndNobodyExplodes";
+			};
+			name = Debug;
+		};
+		767AD43C1FE1616A00AFB33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 37REKZLEH3;
+				INFOPLIST_FILE = KeepTalkingAndNobodyExplodesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepTalkingAndNobodyExplodes.app/KeepTalkingAndNobodyExplodes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		767AD3EC1FE1615E00AFB33B /* Build configuration list for PBXProject "KeepTalkingAndNobodyExplodes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767AD42D1FE1616A00AFB33B /* Debug */,
+				767AD42E1FE1616A00AFB33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		767AD42F1FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767AD4301FE1616A00AFB33B /* Debug */,
+				767AD4311FE1616A00AFB33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		767AD4331FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767AD4341FE1616A00AFB33B /* Debug */,
+				767AD4351FE1616A00AFB33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		767AD4371FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767AD4381FE1616A00AFB33B /* Debug */,
+				767AD4391FE1616A00AFB33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		767AD43A1FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767AD43B1FE1616A00AFB33B /* Debug */,
+				767AD43C1FE1616A00AFB33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 767AD3E91FE1615E00AFB33B /* Project object */;
+}
