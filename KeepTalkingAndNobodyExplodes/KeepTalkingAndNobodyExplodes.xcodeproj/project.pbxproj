@@ -21,6 +21,8 @@
 		767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */; };
 		767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4281FE1616900AFB33B /* NotificationController.swift */; };
 		767AD42B1FE1616A00AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD42A1FE1616A00AFB33B /* Assets.xcassets */; };
+		C995EB031FE2DC98008F23DB /* ManuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995EB011FE2DC98008F23DB /* ManuelViewController.swift */; };
+		C995EB041FE2DC98008F23DB /* ManuelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C995EB021FE2DC98008F23DB /* ManuelViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		767AD4281FE1616900AFB33B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		767AD42A1FE1616A00AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767AD42C1FE1616A00AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C995EB011FE2DC98008F23DB /* ManuelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuelViewController.swift; sourceTree = "<group>"; };
+		C995EB021FE2DC98008F23DB /* ManuelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManuelViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				767AD3FB1FE1616800AFB33B /* Assets.xcassets */,
 				767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */,
 				767AD4001FE1616800AFB33B /* Info.plist */,
+				C995EB011FE2DC98008F23DB /* ManuelViewController.swift */,
+				C995EB021FE2DC98008F23DB /* ManuelViewController.xib */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			files = (
 				767AD3FF1FE1616800AFB33B /* LaunchScreen.storyboard in Resources */,
 				767AD3FC1FE1616800AFB33B /* Assets.xcassets in Resources */,
+				C995EB041FE2DC98008F23DB /* ManuelViewController.xib in Resources */,
 				767AD3FA1FE1616800AFB33B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C995EB031FE2DC98008F23DB /* ManuelViewController.swift in Sources */,
 				767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */,
 				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
 			);
@@ -675,6 +683,7 @@
 				767AD4311FE1616A00AFB33B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		767AD4331FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -683,6 +692,7 @@
 				767AD4351FE1616A00AFB33B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		767AD4371FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodes" */ = {
 			isa = XCConfigurationList;
@@ -691,6 +701,7 @@
 				767AD4391FE1616A00AFB33B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		767AD43A1FE1616A00AFB33B /* Build configuration list for PBXNativeTarget "KeepTalkingAndNobodyExplodesTests" */ = {
 			isa = XCConfigurationList;
@@ -699,6 +710,7 @@
 				767AD43C1FE1616A00AFB33B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
