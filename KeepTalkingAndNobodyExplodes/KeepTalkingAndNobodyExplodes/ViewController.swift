@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var btnStart: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if WCSession.isSupported(){
+            let session = WCSession.default
+            session().delegate = self
+            session().activate()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +32,22 @@ class ViewController: UIViewController {
     
     
     @IBAction func StartGame(_ sender: Any) {
-        print("start")
-        self.present(ManuelViewController.newInstance(), animated: true, completion: nil)
 
+        let session = WCSession.default
+        guard session().isReachable else {
+            return
+        }
+        session().sendMessage(["action":"start"], replyHandler: { (res) in
+            
+            guard let result = res["result"] as? String else {
+                return
+            }
+            
+            
+            
+        })
+        
+        
     }
     
     
@@ -34,3 +55,16 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController : WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+}
