@@ -9,16 +9,64 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
+        <!--FilController-->
+        <scene sceneID="uFY-5C-SfU">
+            <objects>
+                <controller identifier="FilController" id="9Ii-hD-cAi" customClass="FilInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Fil" id="zGP-qu-9O8"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-180" y="341"/>
+        </scene>
+        <!--NomController-->
+        <scene sceneID="qvv-zS-T6F">
+            <objects>
+                <controller identifier="NomController" id="MB6-c9-0sj" customClass="NomInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Nom" id="DdW-Sz-b72"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="29"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="1" alignment="left" id="g5Y-oB-jxR">
+                        <group width="1" widthAdjustment="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="wDP-dc-diJ">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="yolo" id="dzf-QA-d1i"/>
-                                <label alignment="center" verticalAlignment="center" text="Enigme" id="Rx4-zv-Q50"/>
+                                <group width="1" alignment="center" verticalAlignment="center" id="g5Y-oB-jxR">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="yolo" id="dzf-QA-d1i"/>
+                                        <label alignment="center" verticalAlignment="center" text="Enigme" id="Rx4-zv-Q50"/>
+                                    </items>
+                                </group>
                             </items>
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer direction="4" id="U4g-sx-T8v">
+                                    <connections>
+                                        <action selector="up:" destination="AgC-eL-Hgc" id="i36-CF-Zov"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer id="Ofp-g9-lHx">
+                                    <connections>
+                                        <action selector="right:" destination="AgC-eL-Hgc" id="0Mx-D8-aph"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="2" id="mAj-EQ-Kdf">
+                                    <connections>
+                                        <action selector="left:" destination="AgC-eL-Hgc" id="bQE-i3-E3J"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="8" id="S3I-NM-dfg">
+                                    <connections>
+                                        <action selector="down:" destination="AgC-eL-Hgc" id="Toe-dJ-9dA"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                     </items>
                     <connections>
@@ -28,6 +76,39 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--CouleurController-->
+        <scene sceneID="7gP-Cd-iPL">
+            <objects>
+                <controller identifier="CouleurController" id="wii-7I-UeS" customClass="CouleurInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Couleur" id="scR-EU-Jbc"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="475" y="345"/>
+        </scene>
+        <!--PileController-->
+        <scene sceneID="J2q-rh-e8C">
+            <objects>
+                <controller identifier="PileController" id="xK4-vu-Buf" customClass="PileInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Pile" id="cJH-5V-NuV"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="651"/>
+        </scene>
+        <!--BoutonController-->
+        <scene sceneID="CCO-Er-Pek">
+            <objects>
+                <controller identifier="BoutonController" id="uFJ-By-ijy" customClass="BoutonInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="arriere" id="f2e-7u-1c3"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="711" y="343"/>
         </scene>
     </scenes>
 </document>

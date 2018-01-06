@@ -11,10 +11,12 @@ import Foundation
 import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController  {
 
     @IBOutlet var suiteText: WKInterfaceLabel!
     @IBOutlet var text: WKInterfaceLabel!
+   
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         if WCSession.isSupported(){
@@ -23,7 +25,9 @@ class InterfaceController: WKInterfaceController {
             session().activate()
             
         }
-        // Configure interface objects here.
+        
+      
+        
     }
     
     override func willActivate() {
@@ -35,7 +39,32 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    
+    @IBAction func up(_ sender: Any) {
+        //self.pushController(withName: "NomController", context: nil)
+        presentController(withName: "PileController", context: nil)
 
+
+    }
+    
+    @IBAction func right(_ sender: Any) {
+        self.pushController(withName: "FilController", context: nil)
+        
+
+
+    }
+    
+    @IBAction func left(_ sender: Any) {
+        self.pushController(withName: "CouleurController", context: nil)
+
+
+    }
+    
+    @IBAction func down(_ sender: Any) {
+        self.pushController(withName: "NomController", context: nil)
+
+    }
 }
 
 extension InterfaceController : WCSessionDelegate {
