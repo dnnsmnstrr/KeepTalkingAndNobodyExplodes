@@ -12,6 +12,7 @@ import Foundation
 
 class BoutonInterfaceController: WKInterfaceController {
 
+    @IBOutlet var button: WKInterfaceButton!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

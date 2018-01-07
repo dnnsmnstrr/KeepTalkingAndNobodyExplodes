@@ -12,6 +12,12 @@ import Foundation
 
 class CouleurInterfaceController: WKInterfaceController {
 
+    @IBOutlet var green: WKInterfaceButton!
+    @IBOutlet var red: WKInterfaceButton!
+    @IBOutlet var blue: WKInterfaceButton!
+    @IBOutlet var yellow: WKInterfaceButton!
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

@@ -20,6 +20,21 @@
             </objects>
             <point key="canvasLocation" x="-180" y="341"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="EKK-Ql-NEh">
+            <objects>
+                <controller id="yVg-DX-NWs" customClass="InterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" id="FOF-oG-Odc">
+                            <items>
+                                <label width="1" height="1" alignment="center" verticalAlignment="center" text="Désamorce la bombe" textAlignment="center" numberOfLines="2" id="XUh-aL-V0h"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-154" y="-124"/>
+        </scene>
         <!--NomController-->
         <scene sceneID="qvv-zS-T6F">
             <objects>
@@ -31,47 +46,60 @@
             </objects>
             <point key="canvasLocation" x="220" y="29"/>
         </scene>
-        <!--Interface Controller-->
+        <!--LettreController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_App" customModuleProvider="target">
+                <controller identifier="LettreController" id="AgC-eL-Hgc" customClass="LettreInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
                         <group width="1" widthAdjustment="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="wDP-dc-diJ">
                             <items>
-                                <group width="1" alignment="center" verticalAlignment="center" id="g5Y-oB-jxR">
+                                <group width="1" height="0.5" alignment="left" id="haT-zy-cUb">
                                     <items>
-                                        <label alignment="center" verticalAlignment="center" text="yolo" id="dzf-QA-d1i"/>
-                                        <label alignment="center" verticalAlignment="center" text="Enigme" id="Rx4-zv-Q50"/>
+                                        <button width="0.5" height="1" alignment="left" title="P" id="gRU-1Z-agC">
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="left" title="£" id="H8A-n5-Feu">
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.5" alignment="left" id="tUP-cz-yPB">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="left" title="¶" id="SyI-q1-UM3">
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="left" title="&amp;" id="s2H-3P-KpJ">
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </button>
                                     </items>
                                 </group>
                             </items>
                             <gestureRecognizers>
                                 <swipeGestureRecognizer direction="4" id="U4g-sx-T8v">
                                     <connections>
-                                        <action selector="up:" destination="AgC-eL-Hgc" id="i36-CF-Zov"/>
+                                        <action selector="up:" destination="AgC-eL-Hgc" id="vSn-eo-nkk"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                                 <swipeGestureRecognizer id="Ofp-g9-lHx">
                                     <connections>
-                                        <action selector="right:" destination="AgC-eL-Hgc" id="0Mx-D8-aph"/>
+                                        <action selector="right:" destination="AgC-eL-Hgc" id="V9y-Q8-H6L"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                                 <swipeGestureRecognizer direction="2" id="mAj-EQ-Kdf">
                                     <connections>
-                                        <action selector="left:" destination="AgC-eL-Hgc" id="bQE-i3-E3J"/>
+                                        <action selector="left:" destination="AgC-eL-Hgc" id="mEf-xg-ImY"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                                 <swipeGestureRecognizer direction="8" id="S3I-NM-dfg">
                                     <connections>
-                                        <action selector="down:" destination="AgC-eL-Hgc" id="Toe-dJ-9dA"/>
+                                        <action selector="down:" destination="AgC-eL-Hgc" id="Dtu-UH-h8V"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="suiteText" destination="Rx4-zv-Q50" id="yUR-D0-kY4"/>
-                        <outlet property="text" destination="dzf-QA-d1i" id="VUt-DF-06D"/>
+                        <outlet property="screenGame" destination="wDP-dc-diJ" id="nTE-6P-aIo"/>
                     </connections>
                 </controller>
             </objects>
@@ -82,11 +110,52 @@
             <objects>
                 <controller identifier="CouleurController" id="wii-7I-UeS" customClass="CouleurInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Couleur" id="scR-EU-Jbc"/>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="nNn-SM-drn">
+                            <items>
+                                <button width="0.5" alignment="center" id="qR9-bJ-JcP">
+                                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="center" id="0iW-wD-Qa8">
+                            <items>
+                                <group width="0.5" alignment="left" id="oHv-3G-iMm">
+                                    <items>
+                                        <button width="1" alignment="left" id="j4Z-wz-Jca">
+                                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="0.5" alignment="left" id="EJr-lJ-GIH">
+                                    <items>
+                                        <button width="1" alignment="left" id="kGJ-kN-abi">
+                                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="8VC-5r-dwP">
+                            <items>
+                                <button width="0.5" alignment="center" id="m9C-DM-ucb">
+                                    <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="31"/>
+                                </button>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="blue" destination="kGJ-kN-abi" id="QN3-gX-XMz"/>
+                        <outlet property="green" destination="m9C-DM-ucb" id="aLT-ot-ubJ"/>
+                        <outlet property="red" destination="j4Z-wz-Jca" id="Ygl-6a-rvh"/>
+                        <outlet property="yellow" destination="qR9-bJ-JcP" id="oii-Ls-GmZ"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="475" y="345"/>
+            <point key="canvasLocation" x="419" y="274"/>
         </scene>
         <!--PileController-->
         <scene sceneID="J2q-rh-e8C">
@@ -104,8 +173,20 @@
             <objects>
                 <controller identifier="BoutonController" id="uFJ-By-ijy" customClass="BoutonInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="arriere" id="f2e-7u-1c3"/>
+                        <button alignment="center" verticalAlignment="center" id="xB7-oh-Twb">
+                            <group key="contentGroup" width="83" height="83" alignment="left" radius="39" id="GQM-LP-Ydp">
+                                <items>
+                                    <label alignment="center" verticalAlignment="center" text="Press" id="h3b-gc-Bdd">
+                                        <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="button" destination="xB7-oh-Twb" id="5Ty-HM-cfD"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="711" y="343"/>
