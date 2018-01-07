@@ -14,9 +14,41 @@
             <objects>
                 <controller identifier="FilController" id="9Ii-hD-cAi" customClass="FilInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Fil" id="zGP-qu-9O8"/>
+                        <group width="0.10000000000000001" height="0.10000000000000001" alignment="right" radius="7" id="nSJ-Kp-ulL">
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </group>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="j1V-zl-Qp9">
+                            <items>
+                                <group width="1" height="0.050000000000000003" alignment="left" id="cHS-cg-El8"/>
+                                <button width="1" height="0.050000000000000003" alignment="left" id="LnJ-CP-Ad9">
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="ClickFil1" destination="9Ii-hD-cAi" id="QAq-Ur-NM3"/>
+                                    </connections>
+                                </button>
+                                <group width="1" height="0.20000000000000001" alignment="left" id="XFj-pr-6Ua"/>
+                                <button width="1" height="0.050000000000000003" alignment="left" id="T6l-nx-IEy">
+                                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="ClickFil2" destination="9Ii-hD-cAi" id="W6K-E8-XtH"/>
+                                    </connections>
+                                </button>
+                                <group width="1" height="0.20000000000000001" alignment="left" id="T9T-e5-5i0"/>
+                                <button width="1" height="0.050000000000000003" alignment="left" id="jnB-hA-083">
+                                    <color key="backgroundColor" red="0.2053142339" green="0.470701009" blue="0.96479773520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="ClickFil3" destination="9Ii-hD-cAi" id="Muj-ol-wBf"/>
+                                    </connections>
+                                </button>
+                                <group width="1" height="0.20000000000000001" alignment="left" id="tyd-eI-Rry"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
+                        <outlet property="fil1" destination="LnJ-CP-Ad9" id="ulZ-dG-Q8w"/>
+                        <outlet property="fil2" destination="T6l-nx-IEy" id="p92-Hv-uOg"/>
+                        <outlet property="fil3" destination="jnB-hA-083" id="WPk-nW-6wu"/>
+                        <outlet property="voyant" destination="nSJ-Kp-ulL" id="PmG-oJ-izw"/>
                         <segue destination="MB6-c9-0sj" kind="relationship" relationship="nextPage" id="KXz-tg-O27"/>
                     </connections>
                 </controller>
@@ -28,8 +60,20 @@
             <objects>
                 <controller identifier="NomController" id="MB6-c9-0sj" customClass="NomInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Nom" id="DdW-Sz-b72"/>
+                        <group width="1" height="0.90000000000000002" alignment="center" id="Dnm-bH-mZW">
+                            <items>
+                                <group width="0.59999999999999998" height="0.29999999999999999" alignment="center" verticalAlignment="center" radius="7" id="Tnx-JI-lZh">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="8M-T" textAlignment="center" id="58X-p7-d57"/>
+                                    </items>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </group>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="nom" destination="58X-p7-d57" id="v6K-TV-yiI"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="1169" y="343"/>
@@ -41,53 +85,51 @@
                     <items>
                         <group width="1" widthAdjustment="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="wDP-dc-diJ">
                             <items>
-                                <group width="1" height="0.5" alignment="left" id="haT-zy-cUb">
+                                <group width="1" height="0.40000000000000002" alignment="left" id="haT-zy-cUb">
                                     <items>
                                         <button width="0.5" height="1" alignment="left" title="P" id="gRU-1Z-agC">
                                             <fontDescription key="font" type="system" pointSize="18"/>
+                                            <connections>
+                                                <action selector="ClickLettre1" destination="AgC-eL-Hgc" id="wO9-BB-TN9"/>
+                                            </connections>
                                         </button>
                                         <button width="0.5" height="1" alignment="left" title="£" id="H8A-n5-Feu">
                                             <fontDescription key="font" type="system" pointSize="18"/>
+                                            <connections>
+                                                <action selector="ClickLettre2" destination="AgC-eL-Hgc" id="Gvz-YN-U2N"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
-                                <group width="1" height="0.5" alignment="left" id="tUP-cz-yPB">
+                                <group width="1" height="0.40000000000000002" alignment="left" id="tUP-cz-yPB">
                                     <items>
                                         <button width="0.5" height="1" alignment="left" title="¶" id="SyI-q1-UM3">
                                             <fontDescription key="font" type="system" pointSize="18"/>
+                                            <connections>
+                                                <action selector="ClickLettre3" destination="AgC-eL-Hgc" id="dH8-6x-bvJ"/>
+                                            </connections>
                                         </button>
                                         <button width="0.5" height="1" alignment="left" title="&amp;" id="s2H-3P-KpJ">
                                             <fontDescription key="font" type="system" pointSize="18"/>
+                                            <connections>
+                                                <action selector="ClickLettre4" destination="AgC-eL-Hgc" id="nYh-pi-Tm3"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
                             </items>
-                            <gestureRecognizers>
-                                <swipeGestureRecognizer direction="4" id="U4g-sx-T8v">
-                                    <connections>
-                                        <action selector="up:" destination="AgC-eL-Hgc" id="vSn-eo-nkk"/>
-                                    </connections>
-                                </swipeGestureRecognizer>
-                                <swipeGestureRecognizer id="Ofp-g9-lHx">
-                                    <connections>
-                                        <action selector="right:" destination="AgC-eL-Hgc" id="V9y-Q8-H6L"/>
-                                    </connections>
-                                </swipeGestureRecognizer>
-                                <swipeGestureRecognizer direction="2" id="mAj-EQ-Kdf">
-                                    <connections>
-                                        <action selector="left:" destination="AgC-eL-Hgc" id="mEf-xg-ImY"/>
-                                    </connections>
-                                </swipeGestureRecognizer>
-                                <swipeGestureRecognizer direction="8" id="S3I-NM-dfg">
-                                    <connections>
-                                        <action selector="down:" destination="AgC-eL-Hgc" id="Dtu-UH-h8V"/>
-                                    </connections>
-                                </swipeGestureRecognizer>
-                            </gestureRecognizers>
+                        </group>
+                        <group width="0.10000000000000001" height="0.10000000000000001" alignment="right" radius="7" id="Qa2-ST-rRQ">
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="btnLettre1" destination="gRU-1Z-agC" id="aCW-cw-6hI"/>
+                        <outlet property="btnLettre2" destination="H8A-n5-Feu" id="wCJ-6J-5aM"/>
+                        <outlet property="btnLettre3" destination="SyI-q1-UM3" id="rgU-cN-TJ3"/>
+                        <outlet property="btnLettre4" destination="s2H-3P-KpJ" id="2hO-TA-pSS"/>
                         <outlet property="screenGame" destination="wDP-dc-diJ" id="nTE-6P-aIo"/>
+                        <outlet property="voyant" destination="Qa2-ST-rRQ" id="v4e-br-Imi"/>
                         <segue destination="wii-7I-UeS" kind="relationship" relationship="nextPage" id="goY-Pt-2R0"/>
                     </connections>
                 </controller>
@@ -116,11 +158,17 @@
             <objects>
                 <controller identifier="CouleurController" id="wii-7I-UeS" customClass="CouleurInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="nNn-SM-drn">
+                        <group width="0.10000000000000001" height="0.10000000000000001" alignment="right" radius="7" id="MXw-wd-eNy">
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </group>
+                        <group width="1" height="0.34999999999999998" alignment="center" verticalAlignment="bottom" id="nNn-SM-drn">
                             <items>
                                 <button width="0.5" alignment="center" id="qR9-bJ-JcP">
                                     <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                    <connections>
+                                        <action selector="ClickBtn4" destination="wii-7I-UeS" id="TuP-Pj-9kF"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -131,6 +179,9 @@
                                         <button width="1" alignment="left" id="j4Z-wz-Jca">
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="ClickBtn2" destination="wii-7I-UeS" id="hhz-JT-6Lm"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -139,6 +190,9 @@
                                         <button width="1" alignment="left" id="kGJ-kN-abi">
                                             <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="ClickBtn3" destination="wii-7I-UeS" id="WQk-VN-BXm"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
@@ -149,15 +203,19 @@
                                 <button width="0.5" alignment="center" id="m9C-DM-ucb">
                                     <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" pointSize="31"/>
+                                    <connections>
+                                        <action selector="ClickBtn1" destination="wii-7I-UeS" id="OGv-I1-PFH"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="blue" destination="kGJ-kN-abi" id="QN3-gX-XMz"/>
-                        <outlet property="green" destination="m9C-DM-ucb" id="aLT-ot-ubJ"/>
-                        <outlet property="red" destination="j4Z-wz-Jca" id="Ygl-6a-rvh"/>
-                        <outlet property="yellow" destination="qR9-bJ-JcP" id="oii-Ls-GmZ"/>
+                        <outlet property="btn1" destination="m9C-DM-ucb" id="Ot7-FZ-GPx"/>
+                        <outlet property="btn2" destination="j4Z-wz-Jca" id="l8s-kZ-a6f"/>
+                        <outlet property="btn3" destination="kGJ-kN-abi" id="CxS-kH-yJl"/>
+                        <outlet property="btn4" destination="qR9-bJ-JcP" id="uzA-rK-kJe"/>
+                        <outlet property="voyant" destination="MXw-wd-eNy" id="gIH-91-Sel"/>
                         <segue destination="uFJ-By-ijy" kind="relationship" relationship="nextPage" id="SJl-gU-Dbf"/>
                     </connections>
                 </controller>
@@ -169,6 +227,9 @@
             <objects>
                 <controller identifier="BoutonController" id="uFJ-By-ijy" customClass="BoutonInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
                     <items>
+                        <group width="0.10000000000000001" height="0.10000000000000001" alignment="right" radius="7" id="qCf-rc-r27">
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </group>
                         <button alignment="center" verticalAlignment="center" id="xB7-oh-Twb">
                             <group key="contentGroup" width="83" height="83" alignment="left" radius="39" id="GQM-LP-Ydp">
                                 <items>
@@ -178,10 +239,14 @@
                                 </items>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <action selector="ClickBtn" destination="uFJ-By-ijy" id="DaY-kz-FzY"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="button" destination="xB7-oh-Twb" id="5Ty-HM-cfD"/>
+                        <outlet property="voyant" destination="qCf-rc-r27" id="ACo-ac-cDd"/>
                         <segue destination="9Ii-hD-cAi" kind="relationship" relationship="nextPage" id="WuS-FQ-M6H"/>
                     </connections>
                 </controller>

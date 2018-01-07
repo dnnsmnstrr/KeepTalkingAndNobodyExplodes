@@ -12,10 +12,11 @@ import Foundation
 
 class CouleurInterfaceController: WKInterfaceController {
 
-    @IBOutlet var green: WKInterfaceButton!
-    @IBOutlet var red: WKInterfaceButton!
-    @IBOutlet var blue: WKInterfaceButton!
-    @IBOutlet var yellow: WKInterfaceButton!
+    @IBOutlet var voyant: WKInterfaceGroup!
+    @IBOutlet var btn1: WKInterfaceButton!
+    @IBOutlet var btn2: WKInterfaceButton!
+    @IBOutlet var btn3: WKInterfaceButton!
+    @IBOutlet var btn4: WKInterfaceButton!
     
     
     override func awake(withContext context: Any?) {
@@ -23,7 +24,19 @@ class CouleurInterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
     }
-
+    
+    @IBAction func ClickBtn1() {
+    }
+    
+    @IBAction func ClickBtn2() {
+    }
+    
+    @IBAction func ClickBtn3() {
+    }
+    
+    @IBAction func ClickBtn4() {
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()

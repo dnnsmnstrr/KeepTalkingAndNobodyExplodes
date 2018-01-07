@@ -12,12 +12,23 @@ import Foundation
 
 class FilInterfaceController: WKInterfaceController {
 
+    @IBOutlet var voyant: WKInterfaceGroup!
+    @IBOutlet var fil1: WKInterfaceButton!
+    @IBOutlet var fil2: WKInterfaceButton!
+    @IBOutlet var fil3: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
     }
-
+    @IBAction func ClickFil1() {
+    }
+    @IBAction func ClickFil2() {
+    }
+    @IBAction func ClickFil3() {
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
