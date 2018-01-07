@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="inf-3r-fBt">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,24 +16,12 @@
                     <items>
                         <label alignment="left" text="Fil" id="zGP-qu-9O8"/>
                     </items>
+                    <connections>
+                        <segue destination="MB6-c9-0sj" kind="relationship" relationship="nextPage" id="KXz-tg-O27"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-180" y="341"/>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="EKK-Ql-NEh">
-            <objects>
-                <controller id="yVg-DX-NWs" customClass="InterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
-                    <items>
-                        <group width="1" height="1" alignment="left" id="FOF-oG-Odc">
-                            <items>
-                                <label width="1" height="1" alignment="center" verticalAlignment="center" text="Désamorce la bombe" textAlignment="center" numberOfLines="2" id="XUh-aL-V0h"/>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-154" y="-124"/>
+            <point key="canvasLocation" x="936" y="343"/>
         </scene>
         <!--NomController-->
         <scene sceneID="qvv-zS-T6F">
@@ -44,7 +32,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="29"/>
+            <point key="canvasLocation" x="1169" y="343"/>
         </scene>
         <!--LettreController-->
         <scene sceneID="aou-V4-d1y">
@@ -100,10 +88,28 @@
                     </items>
                     <connections>
                         <outlet property="screenGame" destination="wDP-dc-diJ" id="nTE-6P-aIo"/>
+                        <segue destination="wii-7I-UeS" kind="relationship" relationship="nextPage" id="goY-Pt-2R0"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="179" y="300"/>
+        </scene>
+        <!--StartController-->
+        <scene sceneID="Fo9-z8-kFh">
+            <objects>
+                <controller identifier="StartController" id="inf-3r-fBt" customClass="StartInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" id="OFT-d0-dTI">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Désamorce la bombe" textAlignment="center" numberOfLines="2" id="KAN-bv-Bp0">
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="20"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="487" y="-120"/>
         </scene>
         <!--CouleurController-->
         <scene sceneID="7gP-Cd-iPL">
@@ -152,21 +158,11 @@
                         <outlet property="green" destination="m9C-DM-ucb" id="aLT-ot-ubJ"/>
                         <outlet property="red" destination="j4Z-wz-Jca" id="Ygl-6a-rvh"/>
                         <outlet property="yellow" destination="qR9-bJ-JcP" id="oii-Ls-GmZ"/>
+                        <segue destination="uFJ-By-ijy" kind="relationship" relationship="nextPage" id="SJl-gU-Dbf"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="419" y="274"/>
-        </scene>
-        <!--PileController-->
-        <scene sceneID="J2q-rh-e8C">
-            <objects>
-                <controller identifier="PileController" id="xK4-vu-Buf" customClass="PileInterfaceController" customModule="KeepTalkingAndNobodyExplodes_WatchKit_Extension">
-                    <items>
-                        <label alignment="left" text="Pile" id="cJH-5V-NuV"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="220" y="651"/>
+            <point key="canvasLocation" x="482" y="343"/>
         </scene>
         <!--BoutonController-->
         <scene sceneID="CCO-Er-Pek">
@@ -186,6 +182,7 @@
                     </items>
                     <connections>
                         <outlet property="button" destination="xB7-oh-Twb" id="5Ty-HM-cfD"/>
+                        <segue destination="9Ii-hD-cAi" kind="relationship" relationship="nextPage" id="WuS-FQ-M6H"/>
                     </connections>
                 </controller>
             </objects>

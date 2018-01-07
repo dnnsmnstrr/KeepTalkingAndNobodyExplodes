@@ -17,7 +17,6 @@
 		767AD4151FE1616900AFB33B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767AD4131FE1616900AFB33B /* Interface.storyboard */; };
 		767AD4171FE1616900AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD4161FE1616900AFB33B /* Assets.xcassets */; };
 		767AD41E1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		767AD4251FE1616900AFB33B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4241FE1616900AFB33B /* InterfaceController.swift */; };
 		767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */; };
 		767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4281FE1616900AFB33B /* NotificationController.swift */; };
 		767AD42B1FE1616A00AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD42A1FE1616A00AFB33B /* Assets.xcassets */; };
@@ -29,8 +28,8 @@
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
 		C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */; };
 		C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */; };
-		C90395F0200143FC00A2BCB7 /* PileInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395EF200143FC00A2BCB7 /* PileInterfaceController.swift */; };
 		C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F37F92001245900138AFD /* FilInterfaceController.swift */; };
+		C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +98,6 @@
 		767AD4181FE1616900AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		767AD41D1FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KeepTalkingAndNobodyExplodes WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767AD4231FE1616900AFB33B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		767AD4241FE1616900AFB33B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		767AD4281FE1616900AFB33B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		767AD42A1FE1616A00AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,8 +110,8 @@
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
 		C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonInterfaceController.swift; sourceTree = "<group>"; };
 		C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomInterfaceController.swift; sourceTree = "<group>"; };
-		C90395EF200143FC00A2BCB7 /* PileInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PileInterfaceController.swift; sourceTree = "<group>"; };
 		C99F37F92001245900138AFD /* FilInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInterfaceController.swift; sourceTree = "<group>"; };
+		C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,15 +201,14 @@
 		767AD4211FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				767AD4241FE1616900AFB33B /* InterfaceController.swift */,
 				767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */,
 				767AD4281FE1616900AFB33B /* NotificationController.swift */,
 				C99F37F92001245900138AFD /* FilInterfaceController.swift */,
 				C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */,
 				C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */,
 				C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */,
-				C90395EF200143FC00A2BCB7 /* PileInterfaceController.swift */,
 				C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */,
+				C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */,
 				767AD42A1FE1616A00AFB33B /* Assets.xcassets */,
 				767AD42C1FE1616A00AFB33B /* Info.plist */,
 				767AD4221FE1616900AFB33B /* Supporting Files */,
@@ -425,12 +422,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */,
-				C90395F0200143FC00A2BCB7 /* PileInterfaceController.swift in Sources */,
 				767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */,
 				C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */,
 				C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */,
+				C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */,
 				767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */,
-				767AD4251FE1616900AFB33B /* InterfaceController.swift in Sources */,
 				C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */,
 				C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */,
 			);
