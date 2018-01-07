@@ -21,6 +21,10 @@
 		767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4261FE1616900AFB33B /* ExtensionDelegate.swift */; };
 		767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767AD4281FE1616900AFB33B /* NotificationController.swift */; };
 		767AD42B1FE1616A00AFB33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767AD42A1FE1616A00AFB33B /* Assets.xcassets */; };
+		76913F062002561200153740 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76913F042002561200153740 /* Model.xcdatamodeld */; };
+		76913F092002598400153740 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76913F082002598400153740 /* CoreData.framework */; };
+		76913F0B20025A5300153740 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F0A20025A5300153740 /* DataManager.swift */; };
+		76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F0C20025ABA00153740 /* FileManager + Document.swift */; };
 		C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */; };
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
 		C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */; };
@@ -100,6 +104,10 @@
 		767AD4281FE1616900AFB33B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		767AD42A1FE1616A00AFB33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767AD42C1FE1616A00AFB33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76913F052002561200153740 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		76913F082002598400153740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		76913F0A20025A5300153740 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		76913F0C20025ABA00153740 /* FileManager + Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager + Document.swift"; sourceTree = "<group>"; };
 		C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInterfaceController.swift; sourceTree = "<group>"; };
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
 		C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonInterfaceController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76913F092002598400153740 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +150,7 @@
 				767AD4121FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit App */,
 				767AD4211FE1616900AFB33B /* KeepTalkingAndNobodyExplodes WatchKit Extension */,
 				767AD3F21FE1616600AFB33B /* Products */,
+				76913F072002598400153740 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +174,9 @@
 				767AD3FB1FE1616800AFB33B /* Assets.xcassets */,
 				767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */,
 				767AD4001FE1616800AFB33B /* Info.plist */,
+				76913F042002561200153740 /* Model.xcdatamodeld */,
+				76913F0A20025A5300153740 /* DataManager.swift */,
+				76913F0C20025ABA00153740 /* FileManager + Document.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -212,6 +225,14 @@
 				767AD4231FE1616900AFB33B /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76913F072002598400153740 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76913F082002598400153740 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +321,6 @@
 				TargetAttributes = {
 					767AD3F01FE1615F00AFB33B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MTW96AJJ68;
 						ProvisioningStyle = Automatic;
 					};
 					767AD4041FE1616900AFB33B = {
@@ -385,7 +405,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */,
+				76913F0B20025A5300153740 /* DataManager.swift in Sources */,
 				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
+				76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */,
+				76913F062002561200153740 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +651,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MTW96AJJ68;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KeepTalkingAndNobodyExplodes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes;
@@ -641,7 +664,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MTW96AJJ68;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KeepTalkingAndNobodyExplodes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pico.KeepTalkingAndNobodyExplodes;
@@ -729,6 +752,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76913F042002561200153740 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76913F052002561200153740 /* Model.xcdatamodel */,
+			);
+			currentVersion = 76913F052002561200153740 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 767AD3E91FE1615E00AFB33B /* Project object */;
 }

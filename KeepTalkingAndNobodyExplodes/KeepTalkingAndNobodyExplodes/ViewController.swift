@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var btnStart: UIButton!
     
+    @IBOutlet weak var scoreTableView: UITableView!
     
     
     override func viewDidLoad() {
