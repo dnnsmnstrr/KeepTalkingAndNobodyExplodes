@@ -1,8 +1,8 @@
 //
-//  LettreInterfaceController.swift
-//  KeepTalkingAndNobodyExplodes
+//  StartInterfaceController.swift
+//  KeepTalkingAndNobodyExplodes WatchKit Extension
 //
-//  Created by David Fournier on 06/01/2018.
+//  Created by David Fournier on 07/01/2018.
 //  Copyright © 2018 Salomé Russier. All rights reserved.
 //
 
@@ -12,10 +12,8 @@ import WatchConnectivity
 
 
 
-class LettreInterfaceController: WKInterfaceController {
+class StartInterfaceController: WKInterfaceController {
 
-   // @IBOutlet var screenIntro: WKInterfaceLabel!
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         if WCSession.isSupported(){
@@ -27,32 +25,6 @@ class LettreInterfaceController: WKInterfaceController {
         // Configure interface objects here.
     }
 
-    
-//    @IBAction func up(_ sender: Any) {
-//        //self.pushController(withName: "NomController", context: nil)
-//        presentController(withName: "PileController", context: nil)
-//
-//
-//    }
-//
-//    @IBAction func right(_ sender: Any) {
-//        self.pushController(withName: "FilController", context: nil)
-//
-//
-//
-//    }
-//
-//    @IBAction func left(_ sender: Any) {
-//        self.pushController(withName: "CouleurController", context: nil)
-//
-//
-//    }
-//
-//    @IBAction func down(_ sender: Any) {
-//        self.pushController(withName: "NomController", context: nil)
-//
-//    }
-    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -64,7 +36,7 @@ class LettreInterfaceController: WKInterfaceController {
     }
 
 }
-extension LettreInterfaceController : WCSessionDelegate {
+extension StartInterfaceController : WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
@@ -72,7 +44,11 @@ extension LettreInterfaceController : WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
             if action == "start"{
-
+                
+                
+                let controllers = ["LettreController", "CouleurController","FilController","BoutonController","NomController"]
+                presentController(withNames: controllers, contexts: nil)
+                
 
             }
         }
