@@ -149,6 +149,9 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="textAccueil" destination="KAN-bv-Bp0" id="ni1-Y4-rMT"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="487" y="-120"/>

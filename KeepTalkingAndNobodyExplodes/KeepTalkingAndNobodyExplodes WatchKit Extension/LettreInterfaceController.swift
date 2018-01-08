@@ -19,7 +19,8 @@ class LettreInterfaceController: WKInterfaceController {
     @IBOutlet var btnLettre2: WKInterfaceButton!
     @IBOutlet var btnLettre3: WKInterfaceButton!
     @IBOutlet var btnLettre4: WKInterfaceButton!
-    
+    var num = RandomChoice.number
+
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -28,6 +29,23 @@ class LettreInterfaceController: WKInterfaceController {
             session().delegate = self
             session().activate()
             
+        }
+        
+        if num == 1 {
+            btnLettre1.setTitle("£")
+            btnLettre2.setTitle("§")
+            btnLettre4.setTitle("ζ")
+            btnLettre3.setTitle("ξ")
+        }else if num == 2{
+            btnLettre2.setTitle("£")
+            btnLettre3.setTitle("§")
+            btnLettre1.setTitle("ζ")
+            btnLettre4.setTitle("ξ")
+        }else{
+            btnLettre2.setTitle("£")
+            btnLettre3.setTitle("§")
+            btnLettre1.setTitle("ζ")
+            btnLettre4.setTitle("ξ")
         }
     }
 

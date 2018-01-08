@@ -16,11 +16,24 @@ class FilInterfaceController: WKInterfaceController {
     @IBOutlet var fil1: WKInterfaceButton!
     @IBOutlet var fil2: WKInterfaceButton!
     @IBOutlet var fil3: WKInterfaceButton!
-    
+    var num = RandomChoice.number
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
+        if num == 1 {
+            fil1.setBackgroundColor(UIColor.blue)
+            fil2.setBackgroundColor(UIColor.red)
+            fil3.setBackgroundColor(UIColor.blue)
+
+        }else if num == 2{
+            fil1.setBackgroundColor(UIColor.blue)
+            fil2.setBackgroundColor(UIColor.red)
+            fil3.setBackgroundColor(UIColor.yellow)
+        }else{
+            fil1.setBackgroundColor(UIColor.red)
+            fil2.setBackgroundColor(UIColor.yellow)
+            fil3.setBackgroundColor(UIColor.blue)
+        }
     }
     @IBAction func ClickFil1() {
     }

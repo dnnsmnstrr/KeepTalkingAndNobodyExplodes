@@ -10,10 +10,9 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
-
 class StartInterfaceController: WKInterfaceController {
 
+    @IBOutlet var textAccueil: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         if WCSession.isSupported(){
@@ -46,6 +45,7 @@ extension StartInterfaceController : WCSessionDelegate {
             if action == "start"{
                 
                 
+
                 let controllers = ["LettreController", "CouleurController","FilController","BoutonController","NomController"]
                 presentController(withNames: controllers, contexts: nil)
                 
