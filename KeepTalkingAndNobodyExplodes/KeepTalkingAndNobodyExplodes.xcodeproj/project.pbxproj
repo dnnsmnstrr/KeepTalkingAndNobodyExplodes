@@ -32,6 +32,7 @@
 		C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */; };
 		C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F37F92001245900138AFD /* FilInterfaceController.swift */; };
 		C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */; };
+		C9BAB86E2004127100AD4F5F /* VarGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86D2004127100AD4F5F /* VarGlobals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomInterfaceController.swift; sourceTree = "<group>"; };
 		C99F37F92001245900138AFD /* FilInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInterfaceController.swift; sourceTree = "<group>"; };
 		C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
+		C9BAB86D2004127100AD4F5F /* VarGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarGlobals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */,
 				C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */,
 				C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */,
+				C9BAB86D2004127100AD4F5F /* VarGlobals.swift */,
 				767AD42A1FE1616A00AFB33B /* Assets.xcassets */,
 				767AD42C1FE1616A00AFB33B /* Info.plist */,
 				767AD4221FE1616900AFB33B /* Supporting Files */,
@@ -443,6 +446,7 @@
 				C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */,
 				C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */,
 				767AD4271FE1616900AFB33B /* ExtensionDelegate.swift in Sources */,
+				C9BAB86E2004127100AD4F5F /* VarGlobals.swift in Sources */,
 				C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */,
 				C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */,
 			);

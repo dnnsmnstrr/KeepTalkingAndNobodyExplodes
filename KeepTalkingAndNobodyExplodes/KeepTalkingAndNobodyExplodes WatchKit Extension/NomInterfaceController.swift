@@ -12,10 +12,24 @@ import Foundation
 
 class NomInterfaceController: WKInterfaceController {
 
+    @IBOutlet var nom: WKInterfaceLabel!
+    var num = VarGlobals.number
+    var id : String = ""
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        if num == 1 {
+             id = "\(num)M-T"
+            
+        }else if num == 2{
+             id = "\(num)P-A"
+
+        }else{
+             id = "\(num)H-X"
+
+        }
+        nom.setText(id)
     }
 
     override func willActivate() {

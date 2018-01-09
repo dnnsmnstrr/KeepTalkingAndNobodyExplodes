@@ -14,7 +14,15 @@ import WatchConnectivity
 
 class LettreInterfaceController: WKInterfaceController {
 
-   // @IBOutlet var screenIntro: WKInterfaceLabel!
+    @IBOutlet var voyant: WKInterfaceGroup!
+    @IBOutlet var btnLettre1: WKInterfaceButton!
+    @IBOutlet var btnLettre2: WKInterfaceButton!
+    @IBOutlet var btnLettre3: WKInterfaceButton!
+    @IBOutlet var btnLettre4: WKInterfaceButton!
+    var num = VarGlobals.number
+    
+    var essaie = VarGlobals.shared.nbrEssaie
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -24,34 +32,35 @@ class LettreInterfaceController: WKInterfaceController {
             session().activate()
             
         }
-        // Configure interface objects here.
+        
+        if num == 1 {
+            btnLettre1.setTitle("£")
+            btnLettre2.setTitle("§")
+            btnLettre4.setTitle("ζ")
+            btnLettre3.setTitle("ξ")
+        }else if num == 2{
+            btnLettre2.setTitle("£")
+            btnLettre3.setTitle("§")
+            btnLettre1.setTitle("ζ")
+            btnLettre4.setTitle("ξ")
+        }else{
+            btnLettre2.setTitle("£")
+            btnLettre3.setTitle("§")
+            btnLettre1.setTitle("ζ")
+            btnLettre4.setTitle("ξ")
+        }
     }
 
+ 
+    @IBAction func ClickLettre1() {
+    }
     
-//    @IBAction func up(_ sender: Any) {
-//        //self.pushController(withName: "NomController", context: nil)
-//        presentController(withName: "PileController", context: nil)
-//
-//
-//    }
-//
-//    @IBAction func right(_ sender: Any) {
-//        self.pushController(withName: "FilController", context: nil)
-//
-//
-//
-//    }
-//
-//    @IBAction func left(_ sender: Any) {
-//        self.pushController(withName: "CouleurController", context: nil)
-//
-//
-//    }
-//
-//    @IBAction func down(_ sender: Any) {
-//        self.pushController(withName: "NomController", context: nil)
-//
-//    }
+    @IBAction func ClickLettre2() {
+    }
+    @IBAction func ClickLettre3() {
+    }
+    @IBAction func ClickLettre4() {
+    }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
