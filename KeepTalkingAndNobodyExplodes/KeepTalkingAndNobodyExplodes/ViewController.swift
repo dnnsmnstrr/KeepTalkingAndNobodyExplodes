@@ -9,12 +9,14 @@
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var btnStart: UIButton!
-    
     @IBOutlet weak var scoreTableView: UITableView!
     
+    var textCellIdentifier: String = "idCell"
+    var scoreList: [Score] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,37 @@ class ViewController: UIViewController {
             session().activate()
             
         }
+        // en attendant d'avoir les vrai score
+        bouchon()
+        scoreList = Score.shared.GetScoreOrdred()
+        
+        scoreTableView.delegate = self
+        scoreTableView.dataSource = self
+        
+    }
+    
+    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Score.shared.getCount()
+    }
+    
+     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath) as! ScoreTableViewCell
+        
+        let score = scoreList[indexPath.row]
+        cell.nameLabel.text = score.name
+        cell.pointLabel.text = "\(score.point)"
+        
+        
+        return cell
     }
 
+
+  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,6 +80,13 @@ class ViewController: UIViewController {
         })
         
         
+    }
+    
+    func bouchon(){
+        Score.shared.DeleteAllScore()
+        Score.shared.InsertScore(name: "first", point: 50)
+        Score.shared.InsertScore(name: "second", point: 60)
+        Score.shared.InsertScore(name: "third", point: 42)
     }
     
     

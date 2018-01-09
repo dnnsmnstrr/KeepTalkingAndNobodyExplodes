@@ -24,6 +24,8 @@
 		76913F092002598400153740 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76913F082002598400153740 /* CoreData.framework */; };
 		76913F0B20025A5300153740 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F0A20025A5300153740 /* DataManager.swift */; };
 		76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F0C20025ABA00153740 /* FileManager + Document.swift */; };
+		76913F0F20025E4300153740 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F0E20025E4300153740 /* Score.swift */; };
+		76913F14200266A100153740 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F13200266A100153740 /* ScoreTableViewCell.swift */; };
 		C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */; };
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
 		C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */; };
@@ -106,6 +108,8 @@
 		76913F082002598400153740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		76913F0A20025A5300153740 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		76913F0C20025ABA00153740 /* FileManager + Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager + Document.swift"; sourceTree = "<group>"; };
+		76913F0E20025E4300153740 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		76913F13200266A100153740 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInterfaceController.swift; sourceTree = "<group>"; };
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
 		C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonInterfaceController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		767AD3F31FE1616600AFB33B /* KeepTalkingAndNobodyExplodes */ = {
 			isa = PBXGroup;
 			children = (
+				76913F1020025E9D00153740 /* CoreDataFile */,
 				767AD3F41FE1616700AFB33B /* AppDelegate.swift */,
 				767AD3F61FE1616700AFB33B /* ViewController.swift */,
 				767AD3F81FE1616800AFB33B /* Main.storyboard */,
@@ -173,8 +178,7 @@
 				767AD3FD1FE1616800AFB33B /* LaunchScreen.storyboard */,
 				767AD4001FE1616800AFB33B /* Info.plist */,
 				76913F042002561200153740 /* Model.xcdatamodeld */,
-				76913F0A20025A5300153740 /* DataManager.swift */,
-				76913F0C20025ABA00153740 /* FileManager + Document.swift */,
+				76913F13200266A100153740 /* ScoreTableViewCell.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -230,6 +234,16 @@
 				76913F082002598400153740 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76913F1020025E9D00153740 /* CoreDataFile */ = {
+			isa = PBXGroup;
+			children = (
+				76913F0E20025E4300153740 /* Score.swift */,
+				76913F0C20025ABA00153740 /* FileManager + Document.swift */,
+				76913F0A20025A5300153740 /* DataManager.swift */,
+			);
+			name = CoreDataFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,9 +416,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */,
+				76913F14200266A100153740 /* ScoreTableViewCell.swift in Sources */,
 				76913F0B20025A5300153740 /* DataManager.swift in Sources */,
 				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
 				76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */,
+				76913F0F20025E4300153740 /* Score.swift in Sources */,
 				76913F062002561200153740 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
