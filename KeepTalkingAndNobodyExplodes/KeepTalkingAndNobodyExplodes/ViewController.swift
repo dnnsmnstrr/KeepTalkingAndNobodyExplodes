@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController{
 
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var scoreTableView: UITableView!
@@ -28,34 +28,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         // en attendant d'avoir les vrai score
         bouchon()
-        scoreList = Score.shared.GetScoreOrdred()
+        self.scoreList = Score.shared.GetScoreOrdred()
         
         scoreTableView.delegate = self
         scoreTableView.dataSource = self
         
     }
-    
-    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Score.shared.getCount()
-    }
-    
-     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath) as! ScoreTableViewCell
-        
-        let score = scoreList[indexPath.row]
-        cell.nameLabel.text = score.name
-        cell.pointLabel.text = "\(score.point)"
-        
-        
-        return cell
-    }
-
-
-  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,19 +52,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let result = res["result"] as? String else {
                 return
             }
-            
-            
-            
         })
-        
-        
     }
+    
     
     func bouchon(){
         Score.shared.DeleteAllScore()
         Score.shared.InsertScore(name: "first", point: 50)
         Score.shared.InsertScore(name: "second", point: 60)
         Score.shared.InsertScore(name: "third", point: 42)
+    }
+    
+    func showSaveScoreDialogue(score: Double){
+        let alertBox = UIAlertController(title: "Sauvegarder le score",
+                                        message: "Votre score est de \(score) \nComment vous appelez vous ? ",
+                                        preferredStyle: .alert)
+        
+        alertBox.addTextField{
+            (textField: UITextField) in
+            textField.placeholder = "Nom"
+        }
+        
+        //valisation
+        let confirmAction = UIAlertAction(title: "Valider",
+                                          style: .default) { (_) in
+                                            let name = alertBox.textFields?[0].text
+                                            Score.shared.InsertScore(name: name!, point: score)
+                                            self.ReloadData()
+        }
+        
+        //annuler
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) {(_)in}
+        
+       
+        alertBox.addAction(confirmAction)
+        alertBox.addAction(cancelAction)
+        
+        self.present(alertBox, animated: true, completion: nil)
+        
+    }
+    
+    func ReloadData(){
+        self.scoreList = Score.shared.GetScoreOrdred()
+        self.scoreTableView.reloadData()
+        
     }
     
     
@@ -106,4 +115,28 @@ extension ViewController : WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
+}
+
+extension ViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Score.shared.getCount()
+    }
+    
+    func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath) as! ScoreTableViewCell
+        
+        let score = scoreList[indexPath.row]
+        cell.nameLabel.text = score.name
+        cell.pointLabel.text = "\(score.point)"
+        
+        
+        return cell
+    }
+    
+
 }
