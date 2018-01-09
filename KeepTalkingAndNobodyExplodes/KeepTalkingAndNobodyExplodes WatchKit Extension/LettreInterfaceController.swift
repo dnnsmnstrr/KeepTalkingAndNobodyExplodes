@@ -19,8 +19,10 @@ class LettreInterfaceController: WKInterfaceController {
     @IBOutlet var btnLettre2: WKInterfaceButton!
     @IBOutlet var btnLettre3: WKInterfaceButton!
     @IBOutlet var btnLettre4: WKInterfaceButton!
-    var num = RandomChoice.number
-
+    var num = VarGlobals.number
+    
+    var essaie = VarGlobals.shared.nbrEssaie
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

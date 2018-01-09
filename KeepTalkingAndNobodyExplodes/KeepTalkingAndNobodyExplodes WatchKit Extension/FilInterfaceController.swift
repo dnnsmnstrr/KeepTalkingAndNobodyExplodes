@@ -16,7 +16,7 @@ class FilInterfaceController: WKInterfaceController {
     @IBOutlet var fil1: WKInterfaceButton!
     @IBOutlet var fil2: WKInterfaceButton!
     @IBOutlet var fil3: WKInterfaceButton!
-    var num = RandomChoice.number
+    var num = VarGlobals.number
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

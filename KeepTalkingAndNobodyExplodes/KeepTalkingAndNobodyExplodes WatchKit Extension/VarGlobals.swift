@@ -8,9 +8,21 @@
 
 import Foundation
 
-class RandomChoice {
+class VarGlobals {
     static let number = arc4random_uniform(3)+1
-        
+    
+    var nbrEssaie = 0
+    var nbrReussie = 0
+    
+    static let shared = VarGlobals()
+
+    func updateNbrEssaie() {
+        nbrEssaie += 1
+    }
+    func updateNbrReussi() {
+        nbrReussie += 1
+    }
+    
     private init() {}
     
 }

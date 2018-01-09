@@ -12,6 +12,14 @@ import WatchConnectivity
 
 class StartInterfaceController: WKInterfaceController {
 
+    //et si dans un écran une action faite -> update les variables
+    //et penser a allumer diode
+    //si énigme réussi, bloqué énigme
+    //si tout gagné notifié iphone et WIN
+    //si un raté, notifié iphone
+    //si 3 raté notif iphone et GAME OVER
+    
+    
     @IBOutlet var textAccueil: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

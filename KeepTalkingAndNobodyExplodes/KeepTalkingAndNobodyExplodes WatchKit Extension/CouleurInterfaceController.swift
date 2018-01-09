@@ -17,8 +17,13 @@ class CouleurInterfaceController: WKInterfaceController {
     @IBOutlet var btn2: WKInterfaceButton!
     @IBOutlet var btn3: WKInterfaceButton!
     @IBOutlet var btn4: WKInterfaceButton!
-    var num = RandomChoice.number
     
+    var num = VarGlobals.number
+    var essaie = VarGlobals.shared.nbrEssaie
+
+    var colorClick: [Int] = []
+    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -44,24 +49,111 @@ class CouleurInterfaceController: WKInterfaceController {
     
     
     }
+    func upReussi(){
+        VarGlobals.shared.updateNbrReussi()
+        if VarGlobals.shared.nbrReussie == 1 {
+            voyant.setBackgroundColor(UIColor.green)
+            btn1.setEnabled(false)
+            btn2.setEnabled(false)
+            btn3.setEnabled(false)
+            btn4.setEnabled(false)
+
+        }
+        
+        if VarGlobals.shared.nbrReussie == 1 {
+           
+            let h0 = { }
+            
+            let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+            
+            
+            presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+        }
+    }
     
-    
-    
-    
-    
-    
-    
+    func verifyTab(){
+        
+        if num == 1 {
+            if colorClick[0] == 2 {
+                if colorClick[1] == 4 {
+                    if colorClick[2] == 3 {
+                        if colorClick[3] == 1 {
+                            upReussi()
+                            return
+                        }
+                    }
+                }
+            }
+            
+        }else if num == 2{
+            if colorClick[0] == 3 {
+                if colorClick[1] == 1 {
+                    if colorClick[2] == 4 {
+                        if colorClick[3] == 2 {
+                            upReussi()
+                            return
+                        }
+                    }
+                }
+            }
+        }else{
+            if colorClick[0] == 1 {
+                if colorClick[1] == 3 {
+                    if colorClick[2] == 2 {
+                        if colorClick[3] == 4 {
+                            upReussi()
+                            return
+                        }
+                    }
+                }
+            }
+        }
+        colorClick.removeAll()
+        
+        let h0 = { print("ok")}
+        
+        let action = WKAlertAction(title: "Approve", style: .default, handler:h0)
+     
+        
+        presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
+
+    }
     
     @IBAction func ClickBtn1() {
+        
+        if colorClick.count < 4 {
+            colorClick.append(1)
+        }
+        if colorClick.count == 4 {
+            verifyTab()
+        }
     }
     
     @IBAction func ClickBtn2() {
+        if colorClick.count < 4 {
+            colorClick.append(2)
+        }
+        if colorClick.count == 4 {
+            verifyTab()
+        }
     }
     
     @IBAction func ClickBtn3() {
+        if colorClick.count < 4 {
+            colorClick.append(3)
+        }
+        if colorClick.count == 4 {
+            verifyTab()
+        }
     }
     
     @IBAction func ClickBtn4() {
+        if colorClick.count < 4 {
+            colorClick.append(4)
+        }
+        if colorClick.count == 4 {
+            verifyTab()
+        }
     }
     
     override func willActivate() {

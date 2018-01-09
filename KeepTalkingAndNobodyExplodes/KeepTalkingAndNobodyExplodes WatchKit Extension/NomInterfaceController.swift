@@ -13,7 +13,7 @@ import Foundation
 class NomInterfaceController: WKInterfaceController {
 
     @IBOutlet var nom: WKInterfaceLabel!
-    var num = RandomChoice.number
+    var num = VarGlobals.number
     var id : String = ""
 
     override func awake(withContext context: Any?) {
