@@ -52,14 +52,10 @@ class FilInterfaceController: WKInterfaceController {
         
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
-        if(VarGlobals.shared.nbrEssaie == 3){
-            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+        presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
             //prévenir iphone
             
-        }else{
-            presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
-            
-        }
+       
     }
     
     

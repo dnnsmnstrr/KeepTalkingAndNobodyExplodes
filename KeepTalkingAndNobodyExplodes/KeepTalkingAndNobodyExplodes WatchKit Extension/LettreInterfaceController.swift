@@ -112,14 +112,19 @@ class LettreInterfaceController: WKInterfaceController {
         letterClick.removeAll()
         
         let h0 = { print("ok")}
+        let h1 = { self.popToRootController()}
+
         
-        let action = WKAlertAction(title: "Approve", style: .default, handler:h0)
-        
+        let action = WKAlertAction(title: "ok", style: .default, handler:h0)
+        let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
+
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
-        if(VarGlobals.shared.nbrEssaie == 3){
-            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
-            //prévenir iphone
+        if(VarGlobals.shared.nbrEssaie > 2){
+            
+            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .alert, actions: [action1])
+            //prévenir iphone pour revenir sur écran de début
+            
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
             
