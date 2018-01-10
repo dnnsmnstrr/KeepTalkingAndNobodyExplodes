@@ -19,10 +19,10 @@ class NomInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if num == 1 {
+        if num == 2 {
              id = "\(num)M-T"
             
-        }else if num == 2{
+        }else if num == 1{
              id = "\(num)P-A"
 
         }else{

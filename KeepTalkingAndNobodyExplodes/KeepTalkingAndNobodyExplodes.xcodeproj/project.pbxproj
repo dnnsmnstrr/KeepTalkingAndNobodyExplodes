@@ -28,7 +28,6 @@
 		76913F14200266A100153740 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76913F13200266A100153740 /* ScoreTableViewCell.swift */; };
 		C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */; };
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
-		C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */; };
 		C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */; };
 		C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F37F92001245900138AFD /* FilInterfaceController.swift */; };
 		C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */; };
@@ -113,7 +112,6 @@
 		76913F13200266A100153740 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInterfaceController.swift; sourceTree = "<group>"; };
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
-		C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonInterfaceController.swift; sourceTree = "<group>"; };
 		C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomInterfaceController.swift; sourceTree = "<group>"; };
 		C99F37F92001245900138AFD /* FilInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInterfaceController.swift; sourceTree = "<group>"; };
 		C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				C99F37F92001245900138AFD /* FilInterfaceController.swift */,
 				C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */,
 				C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */,
-				C90395EB200143DC00A2BCB7 /* BoutonInterfaceController.swift */,
 				C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */,
 				C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */,
 				C9BAB86D2004127100AD4F5F /* VarGlobals.swift */,
@@ -440,7 +437,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90395EC200143DC00A2BCB7 /* BoutonInterfaceController.swift in Sources */,
 				767AD4291FE1616900AFB33B /* NotificationController.swift in Sources */,
 				C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */,
 				C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */,

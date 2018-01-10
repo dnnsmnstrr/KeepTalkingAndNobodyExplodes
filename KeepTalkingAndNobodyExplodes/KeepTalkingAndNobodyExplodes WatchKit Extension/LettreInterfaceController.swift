@@ -14,7 +14,7 @@ import WatchConnectivity
 
 class LettreInterfaceController: WKInterfaceController {
 
-    @IBOutlet var voyant: WKInterfaceGroup!
+    @IBOutlet var diode: WKInterfaceGroup!
     @IBOutlet var btnLettre1: WKInterfaceButton!
     @IBOutlet var btnLettre2: WKInterfaceButton!
     @IBOutlet var btnLettre3: WKInterfaceButton!
@@ -22,7 +22,8 @@ class LettreInterfaceController: WKInterfaceController {
     var num = VarGlobals.number
     
     var essaie = VarGlobals.shared.nbrEssaie
-    
+    var letterClick: [Int] = []
+
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -51,15 +52,115 @@ class LettreInterfaceController: WKInterfaceController {
         }
     }
 
+    func upReussi(){
+        VarGlobals.shared.updateNbrReussi()
+        
+            diode.setBackgroundColor(UIColor.green)
+            btnLettre1.setEnabled(false)
+            btnLettre2.setEnabled(false)
+            btnLettre3.setEnabled(false)
+            btnLettre4.setEnabled(false)
+            
+        
+        
+        if VarGlobals.shared.nbrReussie == 3 {
+            //envoie iphone reussi
+            
+            let h0 = { }
+            
+            let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+            
+            
+            presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+        }
+    }
  
+    func verifyTab(){
+        
+        if num == 1 {
+            if letterClick[0] == 3 {
+                if letterClick[1] == 2 {
+                    
+                            upReussi()
+                            return
+                }
+            }
+            
+        }else if num == 2{
+            if letterClick[0] == 1 {
+                if letterClick[1] == 2 {
+                    
+                    upReussi()
+                    return
+                    
+                    
+                }
+            
+            }
+        }else{
+            if letterClick[0] == 3 {
+                if letterClick[1] == 4 {
+    
+                    upReussi()
+                    return
+    
+    
+    
+                }
+            }
+        }
+        letterClick.removeAll()
+        
+        let h0 = { print("ok")}
+        
+        let action = WKAlertAction(title: "Approve", style: .default, handler:h0)
+        
+        VarGlobals.shared.updateNbrEssaie() //prévenir iphone
+        
+        if(VarGlobals.shared.nbrEssaie == 3){
+            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+            //prévenir iphone
+        }else{
+            presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
+            
+        }
+        //envoie iphone erreur
+    }
+    
+    
+    
     @IBAction func ClickLettre1() {
+        if letterClick.count < 2 {
+            letterClick.append(1)
+        }
+        if letterClick.count == 2{
+            verifyTab()
+        }
     }
     
     @IBAction func ClickLettre2() {
+        if letterClick.count < 2 {
+            letterClick.append(2)
+        }
+        if letterClick.count == 2{
+            verifyTab()
+        }
     }
     @IBAction func ClickLettre3() {
+        if letterClick.count < 2 {
+            letterClick.append(3)
+        }
+        if letterClick.count == 2{
+            verifyTab()
+        }
     }
     @IBAction func ClickLettre4() {
+        if letterClick.count < 2 {
+            letterClick.append(4)
+        }
+        if letterClick.count == 2{
+            verifyTab()
+        }
     }
     
     override func willActivate() {

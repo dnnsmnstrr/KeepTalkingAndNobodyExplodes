@@ -51,17 +51,17 @@ class CouleurInterfaceController: WKInterfaceController {
     }
     func upReussi(){
         VarGlobals.shared.updateNbrReussi()
-        if VarGlobals.shared.nbrReussie == 1 {
             voyant.setBackgroundColor(UIColor.green)
             btn1.setEnabled(false)
             btn2.setEnabled(false)
             btn3.setEnabled(false)
             btn4.setEnabled(false)
 
-        }
         
-        if VarGlobals.shared.nbrReussie == 1 {
-           
+        
+        if VarGlobals.shared.nbrReussie == 3 {
+            //envoie iphone reussi
+
             let h0 = { }
             
             let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
@@ -113,10 +113,17 @@ class CouleurInterfaceController: WKInterfaceController {
         let h0 = { print("ok")}
         
         let action = WKAlertAction(title: "Approve", style: .default, handler:h0)
-     
         
-        presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
+        VarGlobals.shared.updateNbrEssaie() //prévenir iphone
+        
+        if(VarGlobals.shared.nbrEssaie == 3){
+            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+            //prévenir iphone
+        }else{
+            presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
 
+        }
+        //envoie iphone erreur
     }
     
     @IBAction func ClickBtn1() {

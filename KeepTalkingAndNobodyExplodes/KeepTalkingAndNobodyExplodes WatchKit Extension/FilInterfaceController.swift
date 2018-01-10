@@ -17,6 +17,8 @@ class FilInterfaceController: WKInterfaceController {
     @IBOutlet var fil2: WKInterfaceButton!
     @IBOutlet var fil3: WKInterfaceButton!
     var num = VarGlobals.number
+    var enigmeEnd = false
+
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -35,11 +37,112 @@ class FilInterfaceController: WKInterfaceController {
             fil3.setBackgroundColor(UIColor.blue)
         }
     }
+    
+    func fail(){
+        
+        voyant.setBackgroundColor(UIColor.red)
+        fil1.setEnabled(false)
+        fil2.setEnabled(false)
+        fil3.setEnabled(false)
+        
+        
+        let h0 = { print("ok")}
+        
+        let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+        
+        VarGlobals.shared.updateNbrEssaie() //prévenir iphone
+        
+        if(VarGlobals.shared.nbrEssaie == 3){
+            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+            //prévenir iphone
+            
+        }else{
+            presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
+            
+        }
+    }
+    
+    
+    func upReussi(){
+        enigmeEnd = true
+        VarGlobals.shared.updateNbrReussi()
+            voyant.setBackgroundColor(UIColor.green)
+            fil1.setEnabled(false)
+            fil2.setEnabled(false)
+            fil3.setEnabled(false)
+            
+        
+        
+        if VarGlobals.shared.nbrReussie == 3 {
+            //envoie iphone reussi
+            
+            let h0 = { }
+            
+            let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+            
+            
+            presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+        }
+    }
+    
+    
     @IBAction func ClickFil1() {
+        if enigmeEnd == false {
+        if num == 3 {
+            let image = UIImage(named: "red") as UIImage?
+            fil1.setBackgroundImage(image)
+            upReussi()
+        }else{
+                let image = UIImage(named: "blue") as UIImage?
+                fil1.setBackgroundImage(image)
+            fail()
+        }
+        }
     }
     @IBAction func ClickFil2() {
+        if enigmeEnd == false {
+
+        if num == 2{
+            let image = UIImage(named: "red") as UIImage?
+            fil2.setBackgroundImage(image)
+            upReussi()
+        }else{
+            if num == 1{
+                let image = UIImage(named: "red") as UIImage?
+                fil2.setBackgroundImage(image)
+                
+            }
+            else {
+                let image = UIImage(named: "yellow") as UIImage?
+                fil2.setBackgroundImage(image)
+            }
+            
+            fail()
+        }
+        }
     }
     @IBAction func ClickFil3() {
+        if enigmeEnd == false {
+
+        if num == 1 {
+            let image = UIImage(named: "blue") as UIImage?
+            fil3.setBackgroundImage(image)
+            upReussi()
+        }else{
+            
+            if num == 2{
+                let image = UIImage(named: "yellow") as UIImage?
+                fil3.setBackgroundImage(image)
+                
+            }
+            else {
+                let image = UIImage(named: "blue") as UIImage?
+                fil3.setBackgroundImage(image)
+                
+            }
+            fail()
+        }
+        }
     }
     
     override func willActivate() {
