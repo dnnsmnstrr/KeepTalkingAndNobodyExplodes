@@ -120,10 +120,13 @@ class CouleurInterfaceController: WKInterfaceController {
         
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)
         
-        VarGlobals.shared.updateNbrEssaie() //prévenir iphone
+        VarGlobals.shared.updateNbrEssaie()
+        
+        let session = WCSession.default
+        session().transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
         
         if(VarGlobals.shared.nbrEssaie > 2){
-            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+            presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
             
             let session = WCSession.default
             
@@ -132,7 +135,6 @@ class CouleurInterfaceController: WKInterfaceController {
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
 
         }
-        //envoie iphone erreur
     }
     
     @IBAction func ClickBtn1() {

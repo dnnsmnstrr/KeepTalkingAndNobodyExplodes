@@ -11,6 +11,13 @@ import WatchConnectivity
 
 class FilInfoViewController: UIViewController {
 
+    @IBOutlet weak var diode1: UIView!
+    @IBOutlet weak var diode2: UIView!
+    @IBOutlet weak var diode3: UIView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if WCSession.isSupported(){
@@ -19,7 +26,25 @@ class FilInfoViewController: UIViewController {
             session().activate()
             
         }
+        diode1.layer.cornerRadius = 20
+        diode2.layer.cornerRadius = 20
+        diode3.layer.cornerRadius = 20
+        
+       
+
         // Do any additional setup after loading the view.
+    }
+    
+    override func endAppearanceTransition() {
+        if  VarGlobalsIphone.shared.nbrEssaie > 0 {
+            diode3.backgroundColor = .red
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 1 {
+            diode2.backgroundColor = .red
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 2 {
+            diode1.backgroundColor = .red
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +82,22 @@ extension FilInfoViewController : WCSessionDelegate {
         guard let name = userInfo["Game"] as? String else{
             return
         }
+        
+        if (name == "essaie1"){
+           diode3.backgroundColor = UIColor.red
+            VarGlobalsIphone.shared.updateNbrEssaie()
+
+        }
+        if (name == "essaie2"){
+            diode2.backgroundColor = UIColor.red
+            VarGlobalsIphone.shared.updateNbrEssaie()
+
+        }
+        if (name == "essaie3"){
+            diode1.backgroundColor = UIColor.red
+            VarGlobalsIphone.shared.updateNbrEssaie()
+        }
+        
         if (name == "perdu"){
             let alertBox = UIAlertController(title: "Game Over",
                                              message: "Votre ami(e) a péri... Honte sur vous ",

@@ -120,15 +120,18 @@ class LettreInterfaceController: WKInterfaceController {
 
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
+        let session = WCSession.default
+        session().transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        
         if(VarGlobals.shared.nbrEssaie > 2){
             
-            presentAlert(withTitle: "Perdu", message: "", preferredStyle: .alert, actions: [action1])
+            presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
             let session = WCSession.default
             
             session().transferUserInfo(["Game":"perdu"])
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
-            
+           
         }
         //envoie iphone erreur
     }

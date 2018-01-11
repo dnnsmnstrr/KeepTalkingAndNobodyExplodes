@@ -33,6 +33,7 @@
 		C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */; };
 		C9AA367B2007617F00C9D615 /* CouleurInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */; };
 		C9AA367D200761C400C9D615 /* FilInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367C200761C400C9D615 /* FilInfoViewController.swift */; };
+		C9AA367F200799A300C9D615 /* VarGlobalsIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */; };
 		C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */; };
 		C9BAB86E2004127100AD4F5F /* VarGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86D2004127100AD4F5F /* VarGlobals.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInfoViewController.swift; sourceTree = "<group>"; };
 		C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInfoViewController.swift; sourceTree = "<group>"; };
 		C9AA367C200761C400C9D615 /* FilInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInfoViewController.swift; sourceTree = "<group>"; };
+		C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarGlobalsIphone.swift; sourceTree = "<group>"; };
 		C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
 		C9BAB86D2004127100AD4F5F /* VarGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarGlobals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 				C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */,
 				C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */,
 				C9AA367C200761C400C9D615 /* FilInfoViewController.swift */,
+				C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */,
 				76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */,
 				76913F0F20025E4300153740 /* Score.swift in Sources */,
+				C9AA367F200799A300C9D615 /* VarGlobalsIphone.swift in Sources */,
 				C9AA367D200761C400C9D615 /* FilInfoViewController.swift in Sources */,
 				76913F062002561200153740 /* Model.xcdatamodeld in Sources */,
 			);

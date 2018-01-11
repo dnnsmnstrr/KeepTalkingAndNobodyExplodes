@@ -102,9 +102,49 @@
                     <view key="view" contentMode="scaleToFill" id="wpf-pM-127">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5RD-c9-zeM">
+                                <rect key="frame" x="88" y="28" width="144" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-t2-5vJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5VS-TA-CUh"/>
+                                            <constraint firstAttribute="width" constant="40" id="elq-Rd-vWb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llk-PR-joW">
+                                        <rect key="frame" x="52" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mXq-A0-FSi"/>
+                                            <constraint firstAttribute="width" constant="40" id="zyq-Ir-4tl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-pc-0rb">
+                                        <rect key="frame" x="104" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="kbI-TE-YSG"/>
+                                            <constraint firstAttribute="width" constant="40" id="vIy-gE-oN6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.54905989249999998" blue="0.37592337479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5RD-c9-zeM" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="9ya-VP-WSJ"/>
+                            <constraint firstItem="5RD-c9-zeM" firstAttribute="top" secondItem="NVB-5P-7oo" secondAttribute="bottom" constant="8" id="YgR-hC-qdv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Couleur" image="couleur" id="TII-yK-dMH"/>
+                    <connections>
+                        <outlet property="diode1" destination="cpy-t2-5vJ" id="bg3-N9-dHa"/>
+                        <outlet property="diode2" destination="Llk-PR-joW" id="1H2-hm-CI6"/>
+                        <outlet property="diode3" destination="a4F-pc-0rb" id="R1s-tg-rKl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soZ-ZV-koG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,11 +169,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0Mz-OV-bNk">
+                                <rect key="frame" x="88" y="28" width="144" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWf-Im-Mhj">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="EPZ-Jm-eWz"/>
+                                            <constraint firstAttribute="height" constant="40" id="tM6-Dx-BfR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ci-DZ-ajN">
+                                        <rect key="frame" x="52" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2tW-pt-0fB"/>
+                                            <constraint firstAttribute="width" constant="40" id="J4z-XF-AcE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHJ-hk-QZ6">
+                                        <rect key="frame" x="104" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fsQ-42-vYP"/>
+                                            <constraint firstAttribute="width" constant="40" id="mbE-5Z-PF8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97174556400000001" green="1" blue="0.99344677510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0Mz-OV-bNk" firstAttribute="top" secondItem="B9p-0e-BnT" secondAttribute="bottom" constant="8" id="AWO-mt-aUi"/>
+                            <constraint firstItem="0Mz-OV-bNk" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="nxZ-ua-PFt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lettre" image="letter" id="UFa-S3-hcd"/>
                     <connections>
+                        <outlet property="diode1" destination="KWf-Im-Mhj" id="lFD-hl-KEo"/>
+                        <outlet property="diode2" destination="3Ci-DZ-ajN" id="4Ca-Iy-bUE"/>
+                        <outlet property="diode3" destination="WHJ-hk-QZ6" id="b9O-Xl-5U2"/>
                         <outlet property="label" destination="KqH-zM-39c" id="25B-qE-DBQ"/>
                     </connections>
                 </viewController>
@@ -152,13 +228,53 @@
                     <view key="view" contentMode="scaleToFill" id="luB-Jh-wxd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aXK-FM-KiX">
+                                <rect key="frame" x="88" y="28" width="144" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6g-pk-4qE">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="48v-MU-YY5"/>
+                                            <constraint firstAttribute="height" constant="40" id="FoG-xD-Ze6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-SI-lES">
+                                        <rect key="frame" x="52" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="90d-dh-WO3"/>
+                                            <constraint firstAttribute="height" constant="40" id="slI-cc-4Y4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIC-Ja-pAI">
+                                        <rect key="frame" x="104" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DB7-Jf-Hfw"/>
+                                            <constraint firstAttribute="width" constant="40" id="jax-yw-Xiz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aXK-FM-KiX" firstAttribute="centerX" secondItem="luB-Jh-wxd" secondAttribute="centerX" id="UFT-AW-WgI"/>
+                            <constraint firstItem="aXK-FM-KiX" firstAttribute="top" secondItem="Ijl-ub-9bf" secondAttribute="bottom" constant="8" id="vbC-jf-BSe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fil" image="fil" id="haJ-fz-zaG"/>
+                    <connections>
+                        <outlet property="diode1" destination="g6g-pk-4qE" id="eCp-Ll-Ggl"/>
+                        <outlet property="diode2" destination="aTt-SI-lES" id="wtZ-HG-yiK"/>
+                        <outlet property="diode3" destination="nIC-Ja-pAI" id="SmX-YT-JU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwc-mQ-PEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="-667"/>
+            <point key="canvasLocation" x="1186.875" y="-667.6056338028169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k4e-KG-n8P">

@@ -63,7 +63,7 @@ class FilInterfaceController: WKInterfaceController {
         
         
         
-        presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
+        presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
 
         let session = WCSession.default
         
