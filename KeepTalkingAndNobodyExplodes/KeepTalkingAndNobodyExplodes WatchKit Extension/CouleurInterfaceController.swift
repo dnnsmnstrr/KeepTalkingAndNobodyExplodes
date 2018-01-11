@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
 class CouleurInterfaceController: WKInterfaceController {
@@ -27,6 +28,11 @@ class CouleurInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session().delegate = self
+            session().activate()
+        }
 
         if num == 1 {
             btn1.setBackgroundColor(UIColor.red)
@@ -118,7 +124,10 @@ class CouleurInterfaceController: WKInterfaceController {
         
         if(VarGlobals.shared.nbrEssaie > 2){
             presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
-            //prévenir iphone
+            
+            let session = WCSession.default
+            
+            session().transferUserInfo(["Game":"perdu"])
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
 
@@ -173,4 +182,21 @@ class CouleurInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+}
+extension CouleurInterfaceController : WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if let action = message["action"] as? String {
+            if action == "start"{
+                
+                
+            }
+        }
+    }
+    
+    
+    
 }

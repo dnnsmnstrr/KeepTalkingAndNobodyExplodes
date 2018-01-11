@@ -30,6 +30,9 @@
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
 		C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */; };
 		C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F37F92001245900138AFD /* FilInterfaceController.swift */; };
+		C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */; };
+		C9AA367B2007617F00C9D615 /* CouleurInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */; };
+		C9AA367D200761C400C9D615 /* FilInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367C200761C400C9D615 /* FilInfoViewController.swift */; };
 		C9BAB86C200257DC00AD4F5F /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */; };
 		C9BAB86E2004127100AD4F5F /* VarGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BAB86D2004127100AD4F5F /* VarGlobals.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +117,9 @@
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
 		C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomInterfaceController.swift; sourceTree = "<group>"; };
 		C99F37F92001245900138AFD /* FilInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInterfaceController.swift; sourceTree = "<group>"; };
+		C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInfoViewController.swift; sourceTree = "<group>"; };
+		C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInfoViewController.swift; sourceTree = "<group>"; };
+		C9AA367C200761C400C9D615 /* FilInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInfoViewController.swift; sourceTree = "<group>"; };
 		C9BAB86B200257DC00AD4F5F /* StartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
 		C9BAB86D2004127100AD4F5F /* VarGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarGlobals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +185,9 @@
 				767AD4001FE1616800AFB33B /* Info.plist */,
 				76913F042002561200153740 /* Model.xcdatamodeld */,
 				76913F13200266A100153740 /* ScoreTableViewCell.swift */,
+				C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */,
+				C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */,
+				C9AA367C200761C400C9D615 /* FilInfoViewController.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -416,11 +425,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				767AD3F71FE1616700AFB33B /* ViewController.swift in Sources */,
+				C9AA367B2007617F00C9D615 /* CouleurInfoViewController.swift in Sources */,
 				76913F14200266A100153740 /* ScoreTableViewCell.swift in Sources */,
 				76913F0B20025A5300153740 /* DataManager.swift in Sources */,
 				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
+				C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */,
 				76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */,
 				76913F0F20025E4300153740 /* Score.swift in Sources */,
+				C9AA367D200761C400C9D615 /* FilInfoViewController.swift in Sources */,
 				76913F062002561200153740 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

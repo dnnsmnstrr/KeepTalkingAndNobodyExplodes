@@ -103,11 +103,8 @@ class ViewController: UIViewController{
 
 }
 
+
 extension ViewController : WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
     func sessionDidBecomeInactive(_ session: WCSession) {
         
     }
@@ -115,6 +112,39 @@ extension ViewController : WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        
+        guard let name = userInfo["Game"] as? String else{
+            return
+        }
+        
+        if (name == "perdu"){
+            let alertBox = UIAlertController(title: "Game Over",
+                                             message: "Votre ami(e) a péri... Honte sur vous ",
+                                             preferredStyle: .alert)
+            //valisation
+            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in}
+            
+            
+            
+            //annuler
+            
+            
+            alertBox.addAction(confirmAction)
+            
+            self.present(alertBox, animated: true, completion: nil)
+            
+        }
+        
+        
+    }
+    
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {

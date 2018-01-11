@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
 class FilInterfaceController: WKInterfaceController {
@@ -22,6 +23,16 @@ class FilInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session().delegate = self
+            session().activate()
+        }
+        
+        
+        
         if num == 1 {
             fil1.setBackgroundColor(UIColor.blue)
             fil2.setBackgroundColor(UIColor.red)
@@ -50,11 +61,13 @@ class FilInterfaceController: WKInterfaceController {
         
         let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
         
-        VarGlobals.shared.updateNbrEssaie() //prévenir iphone
+        
         
         presentAlert(withTitle: "Perdu", message: "", preferredStyle: .actionSheet, actions: [action])
-            //prévenir iphone
-            
+
+        let session = WCSession.default
+        
+        session().transferUserInfo(["Game":"perdu"])
        
     }
     
@@ -152,3 +165,10 @@ class FilInterfaceController: WKInterfaceController {
     }
 
 }
+extension FilInterfaceController : WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+}
+

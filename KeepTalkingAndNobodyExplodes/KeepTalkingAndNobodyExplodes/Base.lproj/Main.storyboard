@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8t-zD-rAo" id="kvN-NY-DC1">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGS-hM-ZA3">
@@ -91,29 +91,10 @@
             </objects>
             <point key="canvasLocation" x="-600" y="67.605633802816897"/>
         </scene>
-        <!--Bouton-->
-        <scene sceneID="qYW-n5-Agm">
-            <objects>
-                <viewController id="Mcc-vt-fpI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Yuf-sG-zpJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="f0d-HW-kQC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RTY-BX-HB8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.2053142339" green="0.470701009" blue="0.96479773520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Bouton" image="bouton" id="5iN-Nx-IYy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T2Y-ZW-bf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1238" y="406"/>
-        </scene>
         <!--Couleur-->
         <scene sceneID="Uwr-R7-Nvc">
             <objects>
-                <viewController id="iqz-bm-BEb" sceneMemberID="viewController">
+                <viewController id="iqz-bm-BEb" customClass="CouleurInfoViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NVB-5P-7oo"/>
                         <viewControllerLayoutGuide type="bottom" id="CE3-CX-Arm"/>
@@ -127,12 +108,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soZ-ZV-koG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="871"/>
+            <point key="canvasLocation" x="1187" y="810"/>
         </scene>
         <!--Lettre-->
         <scene sceneID="XCz-Kf-UGK">
             <objects>
-                <viewController id="CQg-5v-aUd" sceneMemberID="viewController">
+                <viewController id="CQg-5v-aUd" customClass="LettreInfoViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B9p-0e-BnT"/>
                         <viewControllerLayoutGuide type="bottom" id="VSI-M8-WgB"/>
@@ -140,18 +121,30 @@
                     <view key="view" contentMode="scaleToFill" id="zLq-fm-fNa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqH-zM-39c">
+                                <rect key="frame" x="139" y="243" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lettre" image="letter" id="UFa-S3-hcd"/>
+                    <connections>
+                        <outlet property="label" destination="KqH-zM-39c" id="25B-qE-DBQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTb-1F-mrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="1026"/>
+            <point key="canvasLocation" x="1187" y="68"/>
         </scene>
         <!--Fil-->
         <scene sceneID="4UG-C8-fzT">
             <objects>
-                <viewController id="BUg-EB-kLN" sceneMemberID="viewController">
+                <viewController id="BUg-EB-kLN" customClass="FilInfoViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ijl-ub-9bf"/>
                         <viewControllerLayoutGuide type="bottom" id="p8t-Jt-BxS"/>
@@ -165,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwc-mQ-PEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="-270"/>
+            <point key="canvasLocation" x="1187" y="-667"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k4e-KG-n8P">
@@ -178,7 +171,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BUg-EB-kLN" kind="relationship" relationship="viewControllers" id="4ea-J9-Xgd"/>
-                        <segue destination="Mcc-vt-fpI" kind="relationship" relationship="viewControllers" id="kEg-vr-Iso"/>
                         <segue destination="CQg-5v-aUd" kind="relationship" relationship="viewControllers" id="UGk-C7-Sy3"/>
                         <segue destination="iqz-bm-BEb" kind="relationship" relationship="viewControllers" id="tFe-4X-BZx"/>
                     </connections>
@@ -189,7 +181,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bouton" width="32" height="32"/>
         <image name="couleur" width="32" height="32"/>
         <image name="fil" width="32" height="32"/>
         <image name="letter" width="32" height="32"/>

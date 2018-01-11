@@ -123,8 +123,9 @@ class LettreInterfaceController: WKInterfaceController {
         if(VarGlobals.shared.nbrEssaie > 2){
             
             presentAlert(withTitle: "Perdu", message: "", preferredStyle: .alert, actions: [action1])
-            //prévenir iphone pour revenir sur écran de début
+            let session = WCSession.default
             
+            session().transferUserInfo(["Game":"perdu"])
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
             
