@@ -32,7 +32,6 @@ class ViewController: UIViewController{
         
         scoreTableView.delegate = self
         scoreTableView.dataSource = self
-        
     }
     
     override func didReceiveMemoryWarning() {

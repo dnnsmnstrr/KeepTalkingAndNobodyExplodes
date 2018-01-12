@@ -66,7 +66,7 @@ class LettreInterfaceController: WKInterfaceController {
         if VarGlobals.shared.nbrReussie == 3 {
             //envoie iphone reussi
             
-            let h0 = { }
+            let h0 = { self.dismiss() }
             
             let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
             
@@ -112,7 +112,7 @@ class LettreInterfaceController: WKInterfaceController {
         letterClick.removeAll()
         
         let h0 = { print("ok")}
-        let h1 = { self.popToRootController()}
+        let h1 = {  self.dismiss()}
 
         
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)

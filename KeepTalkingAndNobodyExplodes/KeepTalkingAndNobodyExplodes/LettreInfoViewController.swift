@@ -105,7 +105,9 @@ extension LettreInfoViewController : WCSessionDelegate {
                                              message: "Votre ami(e) a péri... Honte sur vous ",
                 preferredStyle: .alert)
             //valisation
-            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in}
+            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
+                self.popoverPresentationController
+            }
     
             alertBox.addAction(confirmAction)
             

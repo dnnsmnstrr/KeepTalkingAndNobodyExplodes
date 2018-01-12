@@ -38,6 +38,7 @@ class FilInfoViewController: UIViewController {
     override func endAppearanceTransition() {
         if  VarGlobalsIphone.shared.nbrEssaie > 0 {
             diode3.backgroundColor = .red
+            
         }
         if  VarGlobalsIphone.shared.nbrEssaie > 1 {
             diode2.backgroundColor = .red
@@ -103,11 +104,17 @@ extension FilInfoViewController : WCSessionDelegate {
                                              message: "Votre ami(e) a péri... Honte sur vous ",
                                              preferredStyle: .alert)
             //valisation
-            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in}
+            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
+                self.dismiss(animated: true, completion: {})
+
+            }
             
             alertBox.addAction(confirmAction)
             
             self.present(alertBox, animated: true, completion: nil)
+            
+            
+            
         }
         
     }
