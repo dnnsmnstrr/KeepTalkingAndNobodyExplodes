@@ -27,13 +27,14 @@ class ViewController: UIViewController{
             
         }
         // en attendant d'avoir les vrai score
-        bouchon()
         self.scoreList = Score.shared.GetScoreOrdred()
         
         scoreTableView.delegate = self
         scoreTableView.dataSource = self
     }
-    
+    override func endAppearanceTransition() {
+        self.ReloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

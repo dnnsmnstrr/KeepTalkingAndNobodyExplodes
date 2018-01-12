@@ -113,6 +113,28 @@ extension LettreInfoViewController : WCSessionDelegate {
             
             self.present(alertBox, animated: true, completion: nil)
         }
+        
+        if (name == "gagne"){
+            var score = 10.0
+            let alertBox = UIAlertController(title: "Sauvegarder le score",
+                                             message: "Votre score est de \(score) \nComment vous appelez vous ? ",
+                preferredStyle: .alert)
+            alertBox.addTextField{
+                (textField: UITextField) in
+                textField.placeholder = "Nom"
+            }
+            
+            let confirmAction = UIAlertAction(title: "Valider",
+                                              style: .default) { (_) in
+                                                let name = alertBox.textFields?[0].text
+                                                Score.shared.InsertScore(name: name!, point: score)
+                                                Score.shared.GetScoreOrdred()
+                                                self.dismiss(animated: true, completion: nil)
+                                                
+            }
+            alertBox.addAction(confirmAction)
+            self.present(alertBox, animated: true, completion: nil)
+        }
    
     }
 

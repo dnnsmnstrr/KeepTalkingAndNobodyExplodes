@@ -74,6 +74,9 @@ class CouleurInterfaceController: WKInterfaceController {
             
             
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+            let session = WCSession.default
+            
+            session().transferUserInfo(["Game":"gagne"])
         }
     }
     
