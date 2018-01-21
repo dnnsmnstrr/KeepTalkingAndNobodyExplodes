@@ -200,10 +200,24 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-Vy-kV5">
+                                <rect key="frame" x="20" y="213" width="280" height="142.5"/>
+                                <string key="text">Si en haut rouge alors bleu vert jaune rouge
+Si en haut bleu alors vert bleu jaune rouge
+Si en haut jaune alors jaune rouge vert bleu 
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.54905989249999998" blue="0.37592337479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XMK-Vy-kV5" secondAttribute="trailing" constant="20" id="8Sg-Lk-LqP"/>
                             <constraint firstItem="5RD-c9-zeM" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="9ya-VP-WSJ"/>
+                            <constraint firstItem="XMK-Vy-kV5" firstAttribute="leading" secondItem="wpf-pM-127" secondAttribute="leading" constant="20" id="CGU-NK-B7P"/>
+                            <constraint firstItem="XMK-Vy-kV5" firstAttribute="centerY" secondItem="wpf-pM-127" secondAttribute="centerY" id="MFG-px-Y3t"/>
+                            <constraint firstItem="XMK-Vy-kV5" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="MIO-QF-KBd"/>
                             <constraint firstItem="5RD-c9-zeM" firstAttribute="top" secondItem="NVB-5P-7oo" secondAttribute="bottom" constant="8" id="YgR-hC-qdv"/>
                         </constraints>
                     </view>
@@ -230,9 +244,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqH-zM-39c">
-                                <rect key="frame" x="139" y="243" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqH-zM-39c">
+                                <rect key="frame" x="20" y="193" width="280" height="183"/>
+                                <string key="text">Si le numéro du modèle est impair-&gt; cliquer en bas gauche puis en haut droite
+Si le numéro du modèle est pair -&gt; cliquer en haut gauche puis en haut droite
+Si la dernière lettre est X -&gt; cliquer en bas gauche puis en bas droite
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -270,7 +287,11 @@
                         <color key="backgroundColor" red="0.97174556400000001" green="1" blue="0.99344677510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0Mz-OV-bNk" firstAttribute="top" secondItem="B9p-0e-BnT" secondAttribute="bottom" constant="8" id="AWO-mt-aUi"/>
+                            <constraint firstItem="KqH-zM-39c" firstAttribute="leading" secondItem="zLq-fm-fNa" secondAttribute="leading" constant="20" id="BgZ-4L-Rdu"/>
+                            <constraint firstItem="KqH-zM-39c" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="gQC-0x-BUo"/>
                             <constraint firstItem="0Mz-OV-bNk" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="nxZ-ua-PFt"/>
+                            <constraint firstAttribute="trailing" secondItem="KqH-zM-39c" secondAttribute="trailing" constant="20" id="xlG-9I-Eiw"/>
+                            <constraint firstItem="KqH-zM-39c" firstAttribute="centerY" secondItem="zLq-fm-fNa" secondAttribute="centerY" id="ytV-wG-LPy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lettre" image="letter" id="UFa-S3-hcd"/>
@@ -326,10 +347,24 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-S0-qwT">
+                                <rect key="frame" x="20" y="203" width="280" height="162.5"/>
+                                <string key="text">Si 2  fils de la même couleur -&gt; couper le deuxième de la même couleur
+Si 3 fils différents -&gt; couper celui du milieu
+Si fil rouge en premier -&gt; couper le premier
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="lvN-S0-qwT" firstAttribute="centerY" secondItem="luB-Jh-wxd" secondAttribute="centerY" id="1CD-gg-1jj"/>
+                            <constraint firstItem="lvN-S0-qwT" firstAttribute="leading" secondItem="luB-Jh-wxd" secondAttribute="leading" constant="20" id="Lll-XF-a09"/>
+                            <constraint firstAttribute="trailing" secondItem="lvN-S0-qwT" secondAttribute="trailing" constant="20" id="Qms-yR-3qg"/>
                             <constraint firstItem="aXK-FM-KiX" firstAttribute="centerX" secondItem="luB-Jh-wxd" secondAttribute="centerX" id="UFT-AW-WgI"/>
+                            <constraint firstItem="lvN-S0-qwT" firstAttribute="centerX" secondItem="luB-Jh-wxd" secondAttribute="centerX" id="gEs-Q0-uDn"/>
                             <constraint firstItem="aXK-FM-KiX" firstAttribute="top" secondItem="Ijl-ub-9bf" secondAttribute="bottom" constant="8" id="vbC-jf-BSe"/>
                         </constraints>
                     </view>

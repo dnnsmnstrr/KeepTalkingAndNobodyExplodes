@@ -119,29 +119,6 @@ extension ViewController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         
-        guard let name = userInfo["Game"] as? String else{
-            return
-        }
-        
-        if (name == "perdu"){
-            let alertBox = UIAlertController(title: "Game Over",
-                                             message: "Votre ami(e) a péri... Honte sur vous ",
-                                             preferredStyle: .alert)
-            //valisation
-            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in}
-            
-            
-            
-            //annuler
-            
-            
-            alertBox.addAction(confirmAction)
-            
-            self.present(alertBox, animated: true, completion: nil)
-            
-        }
-        
-        
     }
     
     
@@ -166,6 +143,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+           
+            //reste a supprimer le score de la BDD
+            
+            //self.scoreTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 

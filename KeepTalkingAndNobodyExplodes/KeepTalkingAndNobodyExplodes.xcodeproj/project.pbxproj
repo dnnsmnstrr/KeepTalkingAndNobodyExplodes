@@ -192,8 +192,8 @@
 				C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */,
 				C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */,
 				C9AA367C200761C400C9D615 /* FilInfoViewController.swift */,
-				C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */,
 				C99BADC120148D0400FBB625 /* TimerViewController.swift */,
+				C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";

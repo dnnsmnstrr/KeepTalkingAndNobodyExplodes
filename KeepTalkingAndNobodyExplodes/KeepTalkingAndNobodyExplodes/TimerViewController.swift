@@ -46,6 +46,18 @@ class TimerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func endAppearanceTransition() {
+        if  VarGlobalsIphone.shared.nbrEssaie > 0 {
+            diode3.backgroundColor = .red
+            
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 1 {
+            diode2.backgroundColor = .red
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 2 {
+            diode1.backgroundColor = .red
+        }
+    }
     
     func hmsFrom(seconds: Int, completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
         
@@ -58,6 +70,17 @@ class TimerViewController: UIViewController {
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     func timerRunning() {
+        
+        if  VarGlobalsIphone.shared.nbrEssaie > 0 {
+            diode3.backgroundColor = .red
+            
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 1 {
+            diode2.backgroundColor = .red
+        }
+        if  VarGlobalsIphone.shared.nbrEssaie > 2 {
+            diode1.backgroundColor = .red
+        }
         timerLeft-=1
         
         let seconds = timerLeft % 60
@@ -137,6 +160,7 @@ extension TimerViewController : WCSessionDelegate {
         if (name == "essaie1"){
             diode3.backgroundColor = UIColor.red
             VarGlobalsIphone.shared.updateNbrEssaie()
+
             
         }
         if (name == "essaie2"){
