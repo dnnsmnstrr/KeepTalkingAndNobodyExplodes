@@ -91,6 +91,74 @@
             </objects>
             <point key="canvasLocation" x="-600" y="67.605633802816897"/>
         </scene>
+        <!--Timer-->
+        <scene sceneID="Bfs-Xz-zfh">
+            <objects>
+                <viewController id="VJl-g2-oW5" customClass="TimerViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdP-DY-bfK"/>
+                        <viewControllerLayoutGuide type="bottom" id="TwZ-vl-V22"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M1j-Q1-UdL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-aJ-kJ2">
+                                <rect key="frame" x="110.5" y="259" width="99.5" height="51.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-Wj-kfa">
+                                <rect key="frame" x="88" y="28" width="144" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcR-zr-Oe4">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="LwT-cN-bIt"/>
+                                            <constraint firstAttribute="width" constant="40" id="gkT-hj-Ynk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-fx-Y8z">
+                                        <rect key="frame" x="52" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GKm-B7-ECA"/>
+                                            <constraint firstAttribute="width" constant="40" id="uh5-QM-Ihb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUf-Yy-sOt">
+                                        <rect key="frame" x="104" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jBi-Af-hVj"/>
+                                            <constraint firstAttribute="width" constant="40" id="yhK-Mu-Vd2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pqq-Wj-kfa" firstAttribute="centerX" secondItem="M1j-Q1-UdL" secondAttribute="centerX" id="ALO-Nh-YG9"/>
+                            <constraint firstItem="Zle-aJ-kJ2" firstAttribute="centerY" secondItem="M1j-Q1-UdL" secondAttribute="centerY" id="W5t-IV-WF6"/>
+                            <constraint firstItem="Pqq-Wj-kfa" firstAttribute="top" secondItem="gdP-DY-bfK" secondAttribute="bottom" constant="8" id="Yk3-8t-xQH"/>
+                            <constraint firstItem="Zle-aJ-kJ2" firstAttribute="centerX" secondItem="M1j-Q1-UdL" secondAttribute="centerX" id="nYZ-Pj-xIB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" id="qXs-QK-A4w"/>
+                    <connections>
+                        <outlet property="diode1" destination="zcR-zr-Oe4" id="xeM-oU-6zF"/>
+                        <outlet property="diode2" destination="dtH-fx-Y8z" id="JJ2-6I-GtS"/>
+                        <outlet property="diode3" destination="hUf-Yy-sOt" id="iq2-IH-cAE"/>
+                        <outlet property="timerLabel" destination="Zle-aJ-kJ2" id="ueg-Gh-8yk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kv7-gn-3X0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="817"/>
+        </scene>
         <!--Couleur-->
         <scene sceneID="Uwr-R7-Nvc">
             <objects>
@@ -286,9 +354,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BUg-EB-kLN" kind="relationship" relationship="viewControllers" id="4ea-J9-Xgd"/>
-                        <segue destination="CQg-5v-aUd" kind="relationship" relationship="viewControllers" id="UGk-C7-Sy3"/>
-                        <segue destination="iqz-bm-BEb" kind="relationship" relationship="viewControllers" id="tFe-4X-BZx"/>
+                        <segue destination="VJl-g2-oW5" kind="relationship" relationship="viewControllers" id="9ej-0n-qat"/>
+                        <segue destination="BUg-EB-kLN" kind="relationship" relationship="viewControllers" id="1d3-St-hYU"/>
+                        <segue destination="CQg-5v-aUd" kind="relationship" relationship="viewControllers" id="x9F-S8-Ea2"/>
+                        <segue destination="iqz-bm-BEb" kind="relationship" relationship="viewControllers" id="Y82-V7-PCY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXw-mo-UDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,5 +369,6 @@
         <image name="couleur" width="32" height="32"/>
         <image name="fil" width="32" height="32"/>
         <image name="letter" width="32" height="32"/>
+        <image name="timer" width="32" height="32"/>
     </resources>
 </document>

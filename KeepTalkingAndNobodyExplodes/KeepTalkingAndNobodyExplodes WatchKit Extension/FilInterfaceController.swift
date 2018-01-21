@@ -57,9 +57,11 @@ class FilInterfaceController: WKInterfaceController {
         fil3.setEnabled(false)
         
         
+      
         let h0 = {
             self.dismiss()
         }
+        
         
         let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
         
@@ -178,6 +180,21 @@ class FilInterfaceController: WKInterfaceController {
 extension FilInterfaceController : WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
+    }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if let action = message["action"] as? String {
+            if action == "perdu"{
+                let h0 = {
+                    self.dismiss()
+                }
+                
+                
+                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+                
+                
+                presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+            }
+        }
     }
     
 }

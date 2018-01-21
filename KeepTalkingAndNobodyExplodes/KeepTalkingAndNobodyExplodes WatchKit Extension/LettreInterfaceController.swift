@@ -115,11 +115,9 @@ class LettreInterfaceController: WKInterfaceController {
         letterClick.removeAll()
         
         let h0 = { print("ok")}
-        let h1 = {  self.dismiss()}
 
         
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)
-        let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
 
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
@@ -128,10 +126,7 @@ class LettreInterfaceController: WKInterfaceController {
         
         if(VarGlobals.shared.nbrEssaie > 2){
             
-            presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
-            let session = WCSession.default
-            
-            session().transferUserInfo(["Game":"perdu"])
+           gameOver()
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
            
@@ -139,7 +134,16 @@ class LettreInterfaceController: WKInterfaceController {
         //envoie iphone erreur
     }
     
-    
+    func gameOver(){
+        let h1 = {  self.dismiss()}
+        
+        let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
+
+        presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
+        let session = WCSession.default
+        
+        session().transferUserInfo(["Game":"perdu"])
+    }
     
     @IBAction func ClickLettre1() {
         if letterClick.count < 2 {
@@ -193,9 +197,13 @@ extension LettreInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
-            if action == "start"{
+            if action == "perdu"{
+                let h1 = {  self.dismiss()}
 
+                let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
 
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
+                let session = WCSession.default
             }
         }
     }

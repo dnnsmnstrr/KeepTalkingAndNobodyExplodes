@@ -115,7 +115,7 @@ extension LettreInfoViewController : WCSessionDelegate {
         }
         
         if (name == "gagne"){
-            var score = 10.0
+            var score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -127,7 +127,7 @@ extension LettreInfoViewController : WCSessionDelegate {
             let confirmAction = UIAlertAction(title: "Valider",
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
-                                                Score.shared.InsertScore(name: name!, point: score)
+                                                Score.shared.InsertScore(name: name!, point: Double(score))
                                                 Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 

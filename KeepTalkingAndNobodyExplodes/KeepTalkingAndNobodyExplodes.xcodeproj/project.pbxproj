@@ -29,6 +29,7 @@
 		C90395E7200142C700A2BCB7 /* CouleurInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */; };
 		C90395EA200143B900A2BCB7 /* LettreInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */; };
 		C90395EE200143F100A2BCB7 /* NomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */; };
+		C99BADC220148D0400FBB625 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BADC120148D0400FBB625 /* TimerViewController.swift */; };
 		C99F37FA2001245900138AFD /* FilInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F37F92001245900138AFD /* FilInterfaceController.swift */; };
 		C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */; };
 		C9AA367B2007617F00C9D615 /* CouleurInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */; };
@@ -117,6 +118,7 @@
 		C90395E6200142C700A2BCB7 /* CouleurInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInterfaceController.swift; sourceTree = "<group>"; };
 		C90395E8200143B200A2BCB7 /* LettreInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInterfaceController.swift; sourceTree = "<group>"; };
 		C90395ED200143F100A2BCB7 /* NomInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomInterfaceController.swift; sourceTree = "<group>"; };
+		C99BADC120148D0400FBB625 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		C99F37F92001245900138AFD /* FilInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilInterfaceController.swift; sourceTree = "<group>"; };
 		C9AA3678200751AE00C9D615 /* LettreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettreInfoViewController.swift; sourceTree = "<group>"; };
 		C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouleurInfoViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				C9AA367A2007617F00C9D615 /* CouleurInfoViewController.swift */,
 				C9AA367C200761C400C9D615 /* FilInfoViewController.swift */,
 				C9AA367E200799A300C9D615 /* VarGlobalsIphone.swift */,
+				C99BADC120148D0400FBB625 /* TimerViewController.swift */,
 			);
 			path = KeepTalkingAndNobodyExplodes;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				C9AA367B2007617F00C9D615 /* CouleurInfoViewController.swift in Sources */,
 				76913F14200266A100153740 /* ScoreTableViewCell.swift in Sources */,
 				76913F0B20025A5300153740 /* DataManager.swift in Sources */,
+				C99BADC220148D0400FBB625 /* TimerViewController.swift in Sources */,
 				767AD3F51FE1616700AFB33B /* AppDelegate.swift in Sources */,
 				C9AA3679200751AE00C9D615 /* LettreInfoViewController.swift in Sources */,
 				76913F0D20025ABA00153740 /* FileManager + Document.swift in Sources */,

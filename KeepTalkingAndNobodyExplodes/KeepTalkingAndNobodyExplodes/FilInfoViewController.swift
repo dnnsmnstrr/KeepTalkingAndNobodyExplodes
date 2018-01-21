@@ -15,7 +15,7 @@ class FilInfoViewController: UIViewController {
     @IBOutlet weak var diode2: UIView!
     @IBOutlet weak var diode3: UIView!
     
-    
+   
     
     
     override func viewDidLoad() {
@@ -30,10 +30,11 @@ class FilInfoViewController: UIViewController {
         diode2.layer.cornerRadius = 20
         diode3.layer.cornerRadius = 20
         
+      
        
-
         // Do any additional setup after loading the view.
     }
+   
     
     override func endAppearanceTransition() {
         if  VarGlobalsIphone.shared.nbrEssaie > 0 {
@@ -117,7 +118,9 @@ extension FilInfoViewController : WCSessionDelegate {
             
         }
         if (name == "gagne"){
-            var score = 10.0
+            
+//            var score = TimerViewController.init(nibName: nil, bundle: nil).timerLeft
+            var score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -129,7 +132,7 @@ extension FilInfoViewController : WCSessionDelegate {
             let confirmAction = UIAlertAction(title: "Valider",
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
-                                                Score.shared.InsertScore(name: name!, point: score)
+                                                Score.shared.InsertScore(name: name!, point: Double(score))
                                                 Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 

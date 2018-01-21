@@ -121,12 +121,8 @@ class CouleurInterfaceController: WKInterfaceController {
         
         let h0 = { print("ok")}
         
-        let h1 = {
-             self.dismiss()
-        }
-
+       
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)
-        let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
 
         VarGlobals.shared.updateNbrEssaie()
         
@@ -134,15 +130,25 @@ class CouleurInterfaceController: WKInterfaceController {
         session().transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
         
         if(VarGlobals.shared.nbrEssaie > 2){
-            presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
-            
-            let session = WCSession.default
-            
-            session().transferUserInfo(["Game":"perdu"])
+            gameOver()
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
 
         }
+    }
+    
+    func gameOver(){
+        let h1 = {
+            self.dismiss()
+        }
+
+        let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
+
+        presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
+        
+        let session = WCSession.default
+        
+        session().transferUserInfo(["Game":"perdu"])
     }
     
     @IBAction func ClickBtn1() {
@@ -200,8 +206,15 @@ extension CouleurInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
-            if action == "start"{
+            if action == "perdu"{
+                let h1 = {
+                    self.dismiss()
+                }
                 
+                let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
+                
+                let session = WCSession.default
                 
             }
         }

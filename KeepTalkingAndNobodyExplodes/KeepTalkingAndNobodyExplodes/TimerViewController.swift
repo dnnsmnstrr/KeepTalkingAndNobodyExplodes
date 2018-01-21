@@ -1,58 +1,109 @@
 //
-//  CouleurInfoViewController.swift
+//  TimerViewController.swift
 //  KeepTalkingAndNobodyExplodes
 //
-//  Created by David Fournier on 11/01/2018.
+//  Created by David Fournier on 21/01/2018.
 //  Copyright © 2018 Salomé Russier. All rights reserved.
 //
 
 import UIKit
 import WatchConnectivity
+var timerLeft = 120
 
-class CouleurInfoViewController: UIViewController {
+
+class TimerViewController: UIViewController {
 
     @IBOutlet weak var diode1: UIView!
     @IBOutlet weak var diode2: UIView!
     @IBOutlet weak var diode3: UIView!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    var myTimer: Timer!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        diode1.layer.cornerRadius = 20
+        diode2.layer.cornerRadius = 20
+        diode3.layer.cornerRadius = 20
+        
+        
         if WCSession.isSupported(){
             let session = WCSession.default
             session().delegate = self
             session().activate()
             
         }
-        diode1.layer.cornerRadius = 20
-        diode2.layer.cornerRadius = 20
-        diode3.layer.cornerRadius = 20
         
-    
+       
+        
+        myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
+        
+        
         // Do any additional setup after loading the view.
     }
-
     
     
-    override func endAppearanceTransition() {
-        if  VarGlobalsIphone.shared.nbrEssaie > 0 {
-            diode3.backgroundColor = .red
-        }
-        if  VarGlobalsIphone.shared.nbrEssaie > 1 {
-            diode2.backgroundColor = .red
-        }
-        if  VarGlobalsIphone.shared.nbrEssaie > 2 {
-            diode1.backgroundColor = .red
-        }
+    func hmsFrom(seconds: Int, completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
+        
+        completion(seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        
     }
     
-    
+    func getStringFrom(seconds: Int) -> String {
+        
+        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
+    }
+    func timerRunning() {
+        timerLeft-=1
+        
+        let seconds = timerLeft % 60
+        let minutes = (timerLeft / 60) % 60
+        
+        self.timerLabel.text = String(format:"%d:%02d", minutes, seconds)
+        if timerLeft == 0 {
+            gameOver()
+        }
+        
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    func gameOver(){
+        myTimer.invalidate()
+
+        let alertBox = UIAlertController(title: "Game Over",
+                                         message: "Votre ami(e) a péri... Honte sur vous ",
+                                         preferredStyle: .alert)
+        //valisation
+        let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
+            self.dismiss(animated: true, completion: {})
+            
+        }
+        timerLeft=120
+
+        alertBox.addAction(confirmAction)
+        
+        self.present(alertBox, animated: true, completion: nil)
+        
+        let session = WCSession.default
+        guard session().isReachable else {
+            return
+        }
+        session().sendMessage(["action":"perdu"], replyHandler: { (res) in
+            
+            guard let result = res["result"] as? String else {
+                return
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 
@@ -64,7 +115,7 @@ class CouleurInfoViewController: UIViewController {
     */
 
 }
-extension CouleurInfoViewController : WCSessionDelegate {
+extension TimerViewController : WCSessionDelegate {
     func sessionDidBecomeInactive(_ session: WCSession) {
         
     }
@@ -86,35 +137,25 @@ extension CouleurInfoViewController : WCSessionDelegate {
         if (name == "essaie1"){
             diode3.backgroundColor = UIColor.red
             VarGlobalsIphone.shared.updateNbrEssaie()
-
+            
         }
         if (name == "essaie2"){
             diode2.backgroundColor = UIColor.red
             VarGlobalsIphone.shared.updateNbrEssaie()
-
+            
         }
         if (name == "essaie3"){
             diode1.backgroundColor = UIColor.red
             VarGlobalsIphone.shared.updateNbrEssaie()
-
         }
         
         if (name == "perdu"){
-            let alertBox = UIAlertController(title: "Game Over",
-                                             message: "Votre ami(e) a péri... Honte sur vous ",
-                                             preferredStyle: .alert)
-            //valisation
-            let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
-                self.popoverPresentationController
-
-            }
-            
-            alertBox.addAction(confirmAction)
-            
-            self.present(alertBox, animated: true, completion: nil)
+             gameOver()
         }
         
+        
         if (name == "gagne"){
+            myTimer.invalidate()
             var score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
@@ -134,7 +175,9 @@ extension CouleurInfoViewController : WCSessionDelegate {
             }
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
+            timerLeft=120
         }
+        
         
     }
     
