@@ -87,17 +87,23 @@ extension FilInfoViewController : WCSessionDelegate {
         }
         
         if (name == "essaie1"){
-           diode3.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode3.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
 
         }
         if (name == "essaie2"){
-            diode2.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode2.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
 
         }
         if (name == "essaie3"){
-            diode1.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode1.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
         }
         
@@ -141,7 +147,7 @@ extension FilInfoViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)    
         }
-      
+      self.view.setNeedsLayout()
         
     }
     

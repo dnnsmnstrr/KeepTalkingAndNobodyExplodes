@@ -70,17 +70,7 @@ class TimerViewController: UIViewController {
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     func timerRunning() {
-        
-        if  VarGlobalsIphone.shared.nbrEssaie > 0 {
-            diode3.backgroundColor = .red
-            
-        }
-        if  VarGlobalsIphone.shared.nbrEssaie > 1 {
-            diode2.backgroundColor = .red
-        }
-        if  VarGlobalsIphone.shared.nbrEssaie > 2 {
-            diode1.backgroundColor = .red
-        }
+       
         timerLeft-=1
         
         let seconds = timerLeft % 60
@@ -158,18 +148,24 @@ extension TimerViewController : WCSessionDelegate {
         }
         
         if (name == "essaie1"){
-            diode3.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode3.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
 
             
         }
         if (name == "essaie2"){
-            diode2.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode2.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
             
         }
         if (name == "essaie3"){
-            diode1.backgroundColor = UIColor.red
+            DispatchQueue.main.async {
+                self.diode1.backgroundColor = UIColor.red
+            }
             VarGlobalsIphone.shared.updateNbrEssaie()
         }
         
