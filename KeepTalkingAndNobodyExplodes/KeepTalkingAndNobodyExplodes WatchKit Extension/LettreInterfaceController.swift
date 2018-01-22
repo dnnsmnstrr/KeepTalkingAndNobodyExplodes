@@ -143,7 +143,7 @@ class LettreInterfaceController: WKInterfaceController {
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
         let session = WCSession.default
         
-        session.transferUserInfo(["Game":"perdu"])
+        session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
     }
     
     @IBAction func ClickLettre1() {
