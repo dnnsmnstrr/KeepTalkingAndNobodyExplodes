@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class VarGlobalsIphone {
     
     var nbrEssaie = 0
@@ -18,13 +17,10 @@ class VarGlobalsIphone {
     
     func updateNbrEssaie() {
         nbrEssaie += 1
-        
-        
     }
     func updateNbrReussi() {
         nbrReussie += 1
     }
     
     private init() {}
-    
 }

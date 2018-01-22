@@ -18,13 +18,10 @@ class VarGlobals {
 
     func updateNbrEssaie() {
         nbrEssaie += 1
-        
-        
     }
     func updateNbrReussi() {
         nbrReussie += 1
     }
     
     private init() {}
-    
 }

@@ -10,8 +10,6 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
-
 class LettreInterfaceController: WKInterfaceController {
 
     @IBOutlet var diode: WKInterfaceGroup!
@@ -19,19 +17,17 @@ class LettreInterfaceController: WKInterfaceController {
     @IBOutlet var btnLettre2: WKInterfaceButton!
     @IBOutlet var btnLettre3: WKInterfaceButton!
     @IBOutlet var btnLettre4: WKInterfaceButton!
-    var num = VarGlobals.number
     
+    var num = VarGlobals.number
     var essaie = VarGlobals.shared.nbrEssaie
     var letterClick: [Int] = []
 
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         if WCSession.isSupported(){
             let session = WCSession.default
             session.delegate = self
             session.activate()
-            
         }
         
         if num == 1 {
@@ -54,95 +50,80 @@ class LettreInterfaceController: WKInterfaceController {
 
     func upReussi(){
         VarGlobals.shared.updateNbrReussi()
-        
-            diode.setBackgroundColor(UIColor.green)
-            btnLettre1.setEnabled(false)
-            btnLettre2.setEnabled(false)
-            btnLettre3.setEnabled(false)
-            btnLettre4.setEnabled(false)
-            
-        
+        diode.setBackgroundColor(UIColor.green)
+        btnLettre1.setEnabled(false)
+        btnLettre2.setEnabled(false)
+        btnLettre3.setEnabled(false)
+        btnLettre4.setEnabled(false)
         
         if VarGlobals.shared.nbrReussie == 3 {
             //envoie iphone reussi
-            
             let h0 = { self.dismiss() }
-            
             let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
-            
             
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
             let session = WCSession.default
-            
-            session.transferUserInfo(["Game":"gagne"])
+            guard session.isReachable else {
+                return
+            }
+            session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
         }
     }
  
     func verifyTab(){
-        
         if num == 1 {
             if letterClick[0] == 3 {
                 if letterClick[1] == 2 {
-                    
                             upReussi()
                             return
                 }
             }
-            
         }else if num == 2{
             if letterClick[0] == 1 {
                 if letterClick[1] == 2 {
-                    
                     upReussi()
                     return
-                    
-                    
                 }
-            
             }
         }else{
             if letterClick[0] == 3 {
                 if letterClick[1] == 4 {
-    
                     upReussi()
                     return
-    
-    
-    
                 }
             }
         }
+        
         letterClick.removeAll()
         
         let h0 = { print("ok")}
-
-        
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)
 
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
         let session = WCSession.default
-       // session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        guard session.isReachable else {
+            return
+        }
         session.sendMessage(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"], replyHandler: nil, errorHandler: nil)
         
         if(VarGlobals.shared.nbrEssaie > 2){
-            
            gameOver()
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
-           
         }
         //envoie iphone erreur
     }
     
     func gameOver(){
         let h1 = {  self.dismiss()}
-        
         let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
 
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
         let session = WCSession.default
-        
+        guard session.isReachable else {
+            return
+        }
         session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
     }
     
@@ -192,23 +173,16 @@ class LettreInterfaceController: WKInterfaceController {
 
 }
 extension LettreInterfaceController : WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
             if action == "perdu"{
                 let h1 = {  self.dismiss()}
-
                 let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
 
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
-                //let session = WCSession.default
             }
         }
     }
-    
-    
-    
 }

@@ -15,27 +15,18 @@ class FilInfoViewController: UIViewController {
     @IBOutlet weak var diode2: UIView!
     @IBOutlet weak var diode3: UIView!
     
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if WCSession.isSupported(){
             let session = WCSession.default
             session.delegate = self 
             session.activate()
-            
         }
         diode1.layer.cornerRadius = 20
         diode2.layer.cornerRadius = 20
         diode3.layer.cornerRadius = 20
-        
-      
-       
-        // Do any additional setup after loading the view.
     }
    
-    
     override func endAppearanceTransition() {
         if  VarGlobalsIphone.shared.nbrEssaie > 0 {
             diode3.backgroundColor = .red
@@ -49,40 +40,22 @@ class FilInfoViewController: UIViewController {
         }
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension FilInfoViewController : WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+    func sessionDidBecomeInactive(_ session: WCSession) {}
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
+    func sessionDidDeactivate(_ session: WCSession) {}
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         
-        guard let name = userInfo["Game"] as? String else{
+        guard let name = message["Game"] as? String else{
             return
         }
         
@@ -91,15 +64,15 @@ extension FilInfoViewController : WCSessionDelegate {
                 self.diode3.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-
         }
+        
         if (name == "essaie2"){
             DispatchQueue.main.async {
                 self.diode2.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-
         }
+        
         if (name == "essaie3"){
             DispatchQueue.main.async {
                 self.diode1.backgroundColor = UIColor.red
@@ -121,12 +94,10 @@ extension FilInfoViewController : WCSessionDelegate {
             
             self.present(alertBox, animated: true, completion: nil)
             
-            
-            
         }
+        
         if (name == "gagne"){
-            
-//            var score = TimerViewController.init(nibName: nil, bundle: nil).timerLeft
+
             let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
@@ -148,8 +119,6 @@ extension FilInfoViewController : WCSessionDelegate {
             self.present(alertBox, animated: true, completion: nil)    
         }
       self.view.setNeedsLayout()
-        
     }
-    
 }
 

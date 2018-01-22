@@ -10,7 +10,6 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
 class FilInterfaceController: WKInterfaceController {
 
     @IBOutlet var voyant: WKInterfaceGroup!
@@ -19,11 +18,9 @@ class FilInterfaceController: WKInterfaceController {
     @IBOutlet var fil3: WKInterfaceButton!
     var num = VarGlobals.number
     var enigmeEnd = false
-
-
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         
         if WCSession.isSupported() {
             let session = WCSession.default
@@ -31,13 +28,10 @@ class FilInterfaceController: WKInterfaceController {
             session.activate()
         }
         
-        
-        
         if num == 1 {
             fil1.setBackgroundColor(UIColor.blue)
             fil2.setBackgroundColor(UIColor.red)
             fil3.setBackgroundColor(UIColor.blue)
-
         }else if num == 2{
             fil1.setBackgroundColor(UIColor.blue)
             fil2.setBackgroundColor(UIColor.red)
@@ -56,25 +50,20 @@ class FilInterfaceController: WKInterfaceController {
         fil2.setEnabled(false)
         fil3.setEnabled(false)
         
-        
-      
         let h0 = {
             self.dismiss()
         }
         
-        
         let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
-        
-        
         
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
 
         let session = WCSession.default
-        
-        session.transferUserInfo(["Game":"perdu"])
-       
+        guard session.isReachable else {
+            return
+        }
+        session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
     }
-    
     
     func upReussi(){
         enigmeEnd = true
@@ -83,86 +72,78 @@ class FilInterfaceController: WKInterfaceController {
             fil1.setEnabled(false)
             fil2.setEnabled(false)
             fil3.setEnabled(false)
-            
-        
         
         if VarGlobals.shared.nbrReussie == 3 {
             //envoie iphone reussi
             
             let h0 = {
                 self.dismiss()
-
             }
             
             let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
             
-            
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
             
             let session = WCSession.default
-            
-            session.transferUserInfo(["Game":"gagne"])
-            
+            guard session.isReachable else {
+                return
+            }
+            session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
         }
     }
-    
     
     @IBAction func ClickFil1() {
         if enigmeEnd == false {
-        if num == 3 {
-            let image = UIImage(named: "red") as UIImage?
-            fil1.setBackgroundImage(image)
-            upReussi()
-        }else{
-                let image = UIImage(named: "blue") as UIImage?
+            if num == 3 {
+                let image = UIImage(named: "red") as UIImage?
                 fil1.setBackgroundImage(image)
-            fail()
-        }
+                upReussi()
+            }else{
+                    let image = UIImage(named: "blue") as UIImage?
+                    fil1.setBackgroundImage(image)
+                fail()
+            }
         }
     }
+    
     @IBAction func ClickFil2() {
         if enigmeEnd == false {
-
-        if num == 2{
-            let image = UIImage(named: "red") as UIImage?
-            fil2.setBackgroundImage(image)
-            upReussi()
-        }else{
-            if num == 1{
+            if num == 2{
                 let image = UIImage(named: "red") as UIImage?
                 fil2.setBackgroundImage(image)
-                
+                upReussi()
+            }else{
+                if num == 1{
+                    let image = UIImage(named: "red") as UIImage?
+                    fil2.setBackgroundImage(image)
+                    
+                }
+                else {
+                    let image = UIImage(named: "yellow") as UIImage?
+                    fil2.setBackgroundImage(image)
+                }
+                fail()
             }
-            else {
-                let image = UIImage(named: "yellow") as UIImage?
-                fil2.setBackgroundImage(image)
-            }
-            
-            fail()
-        }
         }
     }
+    
     @IBAction func ClickFil3() {
         if enigmeEnd == false {
-
-        if num == 1 {
-            let image = UIImage(named: "blue") as UIImage?
-            fil3.setBackgroundImage(image)
-            upReussi()
-        }else{
-            
-            if num == 2{
-                let image = UIImage(named: "yellow") as UIImage?
-                fil3.setBackgroundImage(image)
-                
-            }
-            else {
+            if num == 1 {
                 let image = UIImage(named: "blue") as UIImage?
                 fil3.setBackgroundImage(image)
-                
+                upReussi()
+            }else{
+                if num == 2{
+                    let image = UIImage(named: "yellow") as UIImage?
+                    fil3.setBackgroundImage(image)
+                }
+                else {
+                    let image = UIImage(named: "blue") as UIImage?
+                    fil3.setBackgroundImage(image)
+                }
+                fail()
             }
-            fail()
-        }
         }
     }
     
@@ -178,24 +159,20 @@ class FilInterfaceController: WKInterfaceController {
 
 }
 extension FilInterfaceController : WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
             if action == "perdu"{
                 let h0 = {
                     self.dismiss()
                 }
-                
-                
+            
                 let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
-                
                 
                 presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
             }
         }
     }
-    
 }
 

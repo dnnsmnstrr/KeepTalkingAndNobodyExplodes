@@ -9,7 +9,6 @@
 import UIKit
 import WatchConnectivity
 
-
 class LettreInfoViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
@@ -29,7 +28,6 @@ class LettreInfoViewController: UIViewController {
         diode1.layer.cornerRadius = 20
         diode2.layer.cornerRadius = 20
         diode3.layer.cornerRadius = 20
-        
     }
     
     override func endAppearanceTransition() {
@@ -46,21 +44,15 @@ class LettreInfoViewController: UIViewController {
 
 }
 extension LettreInfoViewController : WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+    func sessionDidBecomeInactive(_ session: WCSession) {}
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
+    func sessionDidDeactivate(_ session: WCSession) {}
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         
-        guard let name = userInfo["Game"] as? String else{
+        guard let name = message["Game"] as? String else{
             return
         }
         if (name == "essaie1"){
@@ -70,21 +62,18 @@ extension LettreInfoViewController : WCSessionDelegate {
                 self.diode3.backgroundColor = UIColor.red
             }
         }
+        
         if (name == "essaie2"){
             DispatchQueue.main.async {
                 self.diode2.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-            
-
         }
         if (name == "essaie3"){
             DispatchQueue.main.async {
                 self.diode1.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-            
-
         }
         
         if (name == "perdu"){
@@ -122,9 +111,6 @@ extension LettreInfoViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
         }
-        
-   
     }
-
 }
 

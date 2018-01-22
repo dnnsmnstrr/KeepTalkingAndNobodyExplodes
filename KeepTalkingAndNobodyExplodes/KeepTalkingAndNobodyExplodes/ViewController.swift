@@ -17,7 +17,6 @@ class ViewController: UIViewController{
     var textCellIdentifier: String = "idCell"
     var scoreList: [Score] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if WCSession.isSupported(){
@@ -35,29 +34,14 @@ class ViewController: UIViewController{
     override func endAppearanceTransition() {
         self.ReloadData()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    @IBAction func StartGame(_ sender: Any) {
 
+    @IBAction func StartGame(_ sender: Any) {
         let session = WCSession.default
         guard session.isReachable else {
             return
         }
         session.sendMessage(["action":"start"], replyHandler: { (res) in
-            
         })
-    }
-    
-    
-    func bouchon(){
-        Score.shared.DeleteAllScore()
-        Score.shared.InsertScore(name: "first", point: 50)
-        Score.shared.InsertScore(name: "second", point: 60)
-        Score.shared.InsertScore(name: "third", point: 42)
     }
     
     func showSaveScoreDialogue(score: Double){
@@ -81,7 +65,6 @@ class ViewController: UIViewController{
         //annuler
         let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) {(_)in}
         
-       
         alertBox.addAction(confirmAction)
         alertBox.addAction(cancelAction)
         
@@ -92,37 +75,22 @@ class ViewController: UIViewController{
     func ReloadData(){
         self.scoreList = Score.shared.GetScoreOrdred()
         self.scoreTableView.reloadData()
-        
     }
-    
-    
-    
 
 }
 
 
 extension ViewController : WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+    func sessionDidBecomeInactive(_ session: WCSession) {}
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
+    func sessionDidDeactivate(_ session: WCSession) {}
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        
-    }
-    
-    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {}
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
-    
     private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -138,14 +106,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = score.name
         cell.pointLabel.text = "\(score.point)"
         
-        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             let cell = tableView.cellForRow(at: indexPath) as! ScoreTableViewCell
-            
             
             //reste a supprimer le score de la BDD
             Score.shared.DeleteOneScore(cell.nameLabel.text!)
@@ -153,6 +120,5 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
 
 }

@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 class ScoreTableViewCell: UITableViewCell{
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
-
-    
 }

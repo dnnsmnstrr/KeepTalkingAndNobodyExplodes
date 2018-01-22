@@ -10,26 +10,21 @@ import UIKit
 import WatchConnectivity
 var timerLeft = 120
 
-
 class TimerViewController: UIViewController {
 
     @IBOutlet weak var diode1: UIView!
     @IBOutlet weak var diode2: UIView!
     @IBOutlet weak var diode3: UIView!
-    
     @IBOutlet weak var timerLabel: UILabel!
     
     var myTimer: Timer!
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         diode1.layer.cornerRadius = 20
         diode2.layer.cornerRadius = 20
         diode3.layer.cornerRadius = 20
-        
         
         if WCSession.isSupported(){
             let session = WCSession.default
@@ -38,18 +33,12 @@ class TimerViewController: UIViewController {
             
         }
         
-       
-        
         myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func endAppearanceTransition() {
         if  VarGlobalsIphone.shared.nbrEssaie > 0 {
             diode3.backgroundColor = .red
-            
         }
         if  VarGlobalsIphone.shared.nbrEssaie > 1 {
             diode2.backgroundColor = .red
@@ -60,15 +49,13 @@ class TimerViewController: UIViewController {
     }
     
     func hmsFrom(seconds: Int, completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
-        
         completion(seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-        
     }
     
     func getStringFrom(seconds: Int) -> String {
-        
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
+    
     @objc func timerRunning() {
        
         timerLeft-=1
@@ -77,17 +64,12 @@ class TimerViewController: UIViewController {
         let minutes = (timerLeft / 60) % 60
         
         self.timerLabel.text = String(format:"%d:%02d", minutes, seconds)
+        
         if timerLeft == 0 {
             gameOver()
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     func gameOver(){
         myTimer.invalidate()
@@ -100,6 +82,7 @@ class TimerViewController: UIViewController {
             self.dismiss(animated: true, completion: {})
             
         }
+        
         timerLeft=120
 
         alertBox.addAction(confirmAction)
@@ -111,33 +94,16 @@ class TimerViewController: UIViewController {
             return
         }
         session.sendMessage(["action":"perdu"], replyHandler: { (res) in
-            
-            
         })
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension TimerViewController : WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+    func sessionDidBecomeInactive(_ session: WCSession) {}
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
+    func sessionDidDeactivate(_ session: WCSession) {}
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
 
@@ -150,16 +116,15 @@ extension TimerViewController : WCSessionDelegate {
                 self.diode3.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-
-            
         }
+        
         if (name == "essaie2"){
             DispatchQueue.main.async {
                 self.diode2.backgroundColor = UIColor.red
             }
             VarGlobalsIphone.shared.updateNbrEssaie()
-            
         }
+        
         if (name == "essaie3"){
             DispatchQueue.main.async {
                 self.diode1.backgroundColor = UIColor.red
@@ -170,7 +135,6 @@ extension TimerViewController : WCSessionDelegate {
         if (name == "perdu"){
              gameOver()
         }
-        
         
         if (name == "gagne"){
             myTimer.invalidate()
@@ -195,9 +159,6 @@ extension TimerViewController : WCSessionDelegate {
             self.present(alertBox, animated: true, completion: nil)
             timerLeft=120
         }
-        
-        
     }
-    
 }
 

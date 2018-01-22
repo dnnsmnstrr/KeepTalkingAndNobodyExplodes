@@ -10,7 +10,6 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
 class CouleurInterfaceController: WKInterfaceController {
 
     @IBOutlet var voyant: WKInterfaceGroup!
@@ -21,9 +20,7 @@ class CouleurInterfaceController: WKInterfaceController {
     
     var num = VarGlobals.number
     var essaie = VarGlobals.shared.nbrEssaie
-
     var colorClick: [Int] = []
-    
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -39,7 +36,6 @@ class CouleurInterfaceController: WKInterfaceController {
             btn2.setBackgroundColor(UIColor.blue)
             btn3.setBackgroundColor(UIColor.yellow)
             btn4.setBackgroundColor(UIColor.green)
-
         }else if num == 2{
             btn1.setBackgroundColor(UIColor.blue)
             btn2.setBackgroundColor(UIColor.red)
@@ -52,8 +48,6 @@ class CouleurInterfaceController: WKInterfaceController {
             btn4.setBackgroundColor(UIColor.blue)
         }
     
-    
-    
     }
     func upReussi(){
         VarGlobals.shared.updateNbrReussi()
@@ -63,20 +57,19 @@ class CouleurInterfaceController: WKInterfaceController {
             btn3.setEnabled(false)
             btn4.setEnabled(false)
 
-        
-        
         if VarGlobals.shared.nbrReussie == 3 {
             //envoie iphone reussi
-
             let h0 = {  self.dismiss()}
             
             let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
             
-            
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
-            let session = WCSession.default
             
-            session.transferUserInfo(["Game":"gagne"])
+            let session = WCSession.default
+            guard session.isReachable else {
+                return
+            }
+            session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
         }
     }
     
@@ -93,7 +86,6 @@ class CouleurInterfaceController: WKInterfaceController {
                     }
                 }
             }
-            
         }else if num == 2{
             if colorClick[0] == 3 {
                 if colorClick[1] == 1 {
@@ -117,23 +109,24 @@ class CouleurInterfaceController: WKInterfaceController {
                 }
             }
         }
+        
         colorClick.removeAll()
         
         let h0 = { print("ok")}
-        
-       
         let action = WKAlertAction(title: "ok", style: .default, handler:h0)
 
         VarGlobals.shared.updateNbrEssaie()
         
         let session = WCSession.default
-        session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        guard session.isReachable else {
+            return
+        }
+        session.sendMessage(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"], replyHandler: nil, errorHandler: nil)
         
         if(VarGlobals.shared.nbrEssaie > 2){
             gameOver()
         }else{
             presentAlert(withTitle: "Erreur", message: "", preferredStyle: .actionSheet, actions: [action])
-
         }
     }
     
@@ -147,12 +140,13 @@ class CouleurInterfaceController: WKInterfaceController {
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
         
         let session = WCSession.default
-        
-        session.transferUserInfo(["Game":"perdu"])
+        guard session.isReachable else {
+            return
+        }
+        session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
     }
     
     @IBAction func ClickBtn1() {
-        
         if colorClick.count < 4 {
             colorClick.append(1)
         }
@@ -200,9 +194,7 @@ class CouleurInterfaceController: WKInterfaceController {
 
 }
 extension CouleurInterfaceController : WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
@@ -213,13 +205,7 @@ extension CouleurInterfaceController : WCSessionDelegate {
                 
                 let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
-                
-                //let session = WCSession.default
-                
             }
         }
     }
-    
-    
-    
 }
