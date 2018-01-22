@@ -88,6 +88,7 @@ extension LettreInfoViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             
             self.present(alertBox, animated: true, completion: nil)
+            VarGlobalsIphone.shared.resetVar()
         }
         
         if (name == "gagne"){
@@ -110,6 +111,7 @@ extension LettreInfoViewController : WCSessionDelegate {
             }
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
+            VarGlobalsIphone.shared.resetVar()
         }
     }
 }

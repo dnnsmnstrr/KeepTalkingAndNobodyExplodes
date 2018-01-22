@@ -90,6 +90,7 @@ extension CouleurInfoViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             
             self.present(alertBox, animated: true, completion: nil)
+            VarGlobalsIphone.shared.resetVar()
         }
         
         if (name == "gagne"){
@@ -112,6 +113,7 @@ extension CouleurInfoViewController : WCSessionDelegate {
             }
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
+            VarGlobalsIphone.shared.resetVar()
         }
         self.view.setNeedsLayout()
     }

@@ -22,12 +22,6 @@ class FilInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-        
         if num == 1 {
             fil1.setBackgroundColor(UIColor.blue)
             fil2.setBackgroundColor(UIColor.red)
@@ -63,6 +57,7 @@ class FilInterfaceController: WKInterfaceController {
             return
         }
         session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+        VarGlobals.shared.resetVar()
     }
     
     func upReussi(){
@@ -89,6 +84,7 @@ class FilInterfaceController: WKInterfaceController {
                 return
             }
             session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
+            VarGlobals.shared.resetVar()
         }
     }
     

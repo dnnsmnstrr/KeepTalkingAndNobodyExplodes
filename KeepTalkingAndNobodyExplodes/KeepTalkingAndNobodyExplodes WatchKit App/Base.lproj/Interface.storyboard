@@ -86,7 +86,7 @@
                         <group width="0.10000000000000001" height="0.10000000000000001" alignment="right" radius="7" id="Qa2-ST-rRQ">
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </group>
-                        <group width="1" widthAdjustment="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="wDP-dc-diJ">
+                        <group width="1" widthAdjustment="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="wDP-dc-diJ" userLabel="ScreenGame">
                             <items>
                                 <group width="1" height="0.40000000000000002" alignment="left" id="haT-zy-cUb">
                                     <items>
@@ -129,7 +129,6 @@
                         <outlet property="btnLettre3" destination="SyI-q1-UM3" id="rgU-cN-TJ3"/>
                         <outlet property="btnLettre4" destination="s2H-3P-KpJ" id="2hO-TA-pSS"/>
                         <outlet property="diode" destination="Qa2-ST-rRQ" id="y64-lT-mlX"/>
-                        <outlet property="screenGame" destination="wDP-dc-diJ" id="nTE-6P-aIo"/>
                         <segue destination="wii-7I-UeS" kind="relationship" relationship="nextPage" id="goY-Pt-2R0"/>
                     </connections>
                 </controller>

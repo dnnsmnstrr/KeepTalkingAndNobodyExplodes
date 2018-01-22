@@ -19,12 +19,6 @@ class NomInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if WCSession.isSupported(){
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-        
         if num == 2 {
              id = "\(num)M-T"
         }else if num == 1{

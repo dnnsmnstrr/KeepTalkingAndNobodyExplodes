@@ -24,11 +24,6 @@ class LettreInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        if WCSession.isSupported(){
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
         
         if num == 1 {
             btnLettre1.setTitle("£")
@@ -67,6 +62,7 @@ class LettreInterfaceController: WKInterfaceController {
                 return
             }
             session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
+            VarGlobals.shared.resetVar()
         }
     }
  
@@ -125,6 +121,7 @@ class LettreInterfaceController: WKInterfaceController {
             return
         }
         session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+        VarGlobals.shared.resetVar()
     }
     
     @IBAction func ClickLettre1() {

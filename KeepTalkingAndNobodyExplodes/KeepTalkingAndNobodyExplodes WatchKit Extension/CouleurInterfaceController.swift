@@ -24,13 +24,7 @@ class CouleurInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-
+    
         if num == 1 {
             btn1.setBackgroundColor(UIColor.red)
             btn2.setBackgroundColor(UIColor.blue)
@@ -70,6 +64,7 @@ class CouleurInterfaceController: WKInterfaceController {
                 return
             }
             session.sendMessage(["Game":"gagne"], replyHandler: nil, errorHandler: nil)
+            VarGlobals.shared.resetVar()
         }
     }
     
@@ -144,6 +139,7 @@ class CouleurInterfaceController: WKInterfaceController {
             return
         }
         session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+        VarGlobals.shared.resetVar()
     }
     
     @IBAction func ClickBtn1() {

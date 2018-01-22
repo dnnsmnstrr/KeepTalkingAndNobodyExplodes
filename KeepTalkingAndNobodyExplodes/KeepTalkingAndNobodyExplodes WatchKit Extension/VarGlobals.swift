@@ -23,5 +23,10 @@ class VarGlobals {
         nbrReussie += 1
     }
     
+    func resetVar(){
+        nbrEssaie = 0
+        nbrReussie = 0
+    }
+    
     private init() {}
 }

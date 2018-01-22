@@ -134,6 +134,7 @@ extension TimerViewController : WCSessionDelegate {
         
         if (name == "perdu"){
              gameOver()
+            VarGlobalsIphone.shared.resetVar()
         }
         
         if (name == "gagne"){
@@ -158,6 +159,7 @@ extension TimerViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
             timerLeft=120
+            VarGlobalsIphone.shared.resetVar()
         }
     }
 }

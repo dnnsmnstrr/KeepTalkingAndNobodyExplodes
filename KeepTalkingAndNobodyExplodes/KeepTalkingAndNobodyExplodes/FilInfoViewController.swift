@@ -93,7 +93,7 @@ extension FilInfoViewController : WCSessionDelegate {
             alertBox.addAction(confirmAction)
             
             self.present(alertBox, animated: true, completion: nil)
-            
+            VarGlobalsIphone.shared.resetVar()
         }
         
         if (name == "gagne"){
@@ -116,7 +116,8 @@ extension FilInfoViewController : WCSessionDelegate {
                                                 
             }
             alertBox.addAction(confirmAction)
-            self.present(alertBox, animated: true, completion: nil)    
+            self.present(alertBox, animated: true, completion: nil)
+            VarGlobalsIphone.shared.resetVar()
         }
       self.view.setNeedsLayout()
     }
