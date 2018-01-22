@@ -196,7 +196,7 @@ extension LettreInterfaceController : WCSessionDelegate {
         
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
             if action == "perdu"{
                 let h1 = {  self.dismiss()}
