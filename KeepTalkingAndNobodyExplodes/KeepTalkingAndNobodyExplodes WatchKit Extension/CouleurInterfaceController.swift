@@ -30,8 +30,8 @@ class CouleurInterfaceController: WKInterfaceController {
         
         if WCSession.isSupported() {
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
         }
 
         if num == 1 {
@@ -76,7 +76,7 @@ class CouleurInterfaceController: WKInterfaceController {
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
             let session = WCSession.default
             
-            session().transferUserInfo(["Game":"gagne"])
+            session.transferUserInfo(["Game":"gagne"])
         }
     }
     
@@ -127,7 +127,7 @@ class CouleurInterfaceController: WKInterfaceController {
         VarGlobals.shared.updateNbrEssaie()
         
         let session = WCSession.default
-        session().transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
         
         if(VarGlobals.shared.nbrEssaie > 2){
             gameOver()
@@ -148,7 +148,7 @@ class CouleurInterfaceController: WKInterfaceController {
         
         let session = WCSession.default
         
-        session().transferUserInfo(["Game":"perdu"])
+        session.transferUserInfo(["Game":"perdu"])
     }
     
     @IBAction func ClickBtn1() {
@@ -214,7 +214,7 @@ extension CouleurInterfaceController : WCSessionDelegate {
                 let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
                 
-                let session = WCSession.default
+                //let session = WCSession.default
                 
             }
         }

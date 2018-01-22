@@ -29,8 +29,8 @@ class LettreInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         
@@ -74,7 +74,7 @@ class LettreInterfaceController: WKInterfaceController {
             presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
             let session = WCSession.default
             
-            session().transferUserInfo(["Game":"gagne"])
+            session.transferUserInfo(["Game":"gagne"])
         }
     }
  
@@ -122,7 +122,7 @@ class LettreInterfaceController: WKInterfaceController {
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
         let session = WCSession.default
-        session().transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
         
         if(VarGlobals.shared.nbrEssaie > 2){
             
@@ -142,7 +142,7 @@ class LettreInterfaceController: WKInterfaceController {
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
         let session = WCSession.default
         
-        session().transferUserInfo(["Game":"perdu"])
+        session.transferUserInfo(["Game":"perdu"])
     }
     
     @IBAction func ClickLettre1() {
@@ -203,7 +203,7 @@ extension LettreInterfaceController : WCSessionDelegate {
                 let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
 
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
-                let session = WCSession.default
+                //let session = WCSession.default
             }
         }
     }

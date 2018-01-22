@@ -22,20 +22,15 @@ class LettreInfoViewController: UIViewController {
         
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
-            
+            session.delegate = self
+            session.activate()
         }
         
         diode1.layer.cornerRadius = 20
         diode2.layer.cornerRadius = 20
         diode3.layer.cornerRadius = 20
         
-       
-
-        // Do any additional setup after loading the view.
     }
-
     
     override func endAppearanceTransition() {
         if  VarGlobalsIphone.shared.nbrEssaie > 0 {
@@ -48,23 +43,6 @@ class LettreInfoViewController: UIViewController {
             diode1.backgroundColor = .red
         }
     }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension LettreInfoViewController : WCSessionDelegate {
@@ -115,7 +93,7 @@ extension LettreInfoViewController : WCSessionDelegate {
                 preferredStyle: .alert)
             //valisation
             let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
-                self.popoverPresentationController
+                self.dismiss(animated: true, completion: {})
             }
     
             alertBox.addAction(confirmAction)
@@ -124,7 +102,7 @@ extension LettreInfoViewController : WCSessionDelegate {
         }
         
         if (name == "gagne"){
-            var score = timerLeft
+            let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -137,7 +115,7 @@ extension LettreInfoViewController : WCSessionDelegate {
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
                                                 Score.shared.InsertScore(name: name!, point: Double(score))
-                                                Score.shared.GetScoreOrdred()
+                                                //Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 
             }

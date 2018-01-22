@@ -25,8 +25,8 @@ class StartInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         // Configure interface objects here.
@@ -49,6 +49,7 @@ extension StartInterfaceController : WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        //print(message["action"] as? String ?? <#default value#>)
         if let action = message["action"] as? String {
             if action == "start"{
                 

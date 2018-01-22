@@ -20,8 +20,8 @@ class CouleurInfoViewController: UIViewController {
         super.viewDidLoad()
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         diode1.layer.cornerRadius = 20
@@ -111,8 +111,7 @@ extension CouleurInfoViewController : WCSessionDelegate {
                                              preferredStyle: .alert)
             //valisation
             let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
-                self.popoverPresentationController
-
+                self.dismiss(animated: true, completion: {})
             }
             
             alertBox.addAction(confirmAction)
@@ -121,7 +120,7 @@ extension CouleurInfoViewController : WCSessionDelegate {
         }
         
         if (name == "gagne"){
-            var score = timerLeft
+            let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -134,7 +133,7 @@ extension CouleurInfoViewController : WCSessionDelegate {
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
                                                 Score.shared.InsertScore(name: name!, point: Double(score))
-                                                Score.shared.GetScoreOrdred()
+                                                //Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 
             }

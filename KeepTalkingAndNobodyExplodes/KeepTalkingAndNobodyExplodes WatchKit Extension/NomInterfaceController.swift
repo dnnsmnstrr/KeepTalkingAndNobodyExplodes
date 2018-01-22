@@ -24,8 +24,8 @@ class NomInterfaceController: WKInterfaceController {
         
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         
@@ -65,7 +65,7 @@ extension NomInterfaceController : WCSessionDelegate {
                 
                 let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
-                let session = WCSession.default
+                //let session = WCSession.default
                 
             }
         }

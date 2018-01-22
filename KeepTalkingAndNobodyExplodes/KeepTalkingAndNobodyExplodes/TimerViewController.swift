@@ -33,8 +33,8 @@ class TimerViewController: UIViewController {
         
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         
@@ -69,7 +69,7 @@ class TimerViewController: UIViewController {
         
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
-    func timerRunning() {
+    @objc func timerRunning() {
        
         timerLeft-=1
         
@@ -107,14 +107,12 @@ class TimerViewController: UIViewController {
         self.present(alertBox, animated: true, completion: nil)
         
         let session = WCSession.default
-        guard session().isReachable else {
+        guard session.isReachable else {
             return
         }
-        session().sendMessage(["action":"perdu"], replyHandler: { (res) in
+        session.sendMessage(["action":"perdu"], replyHandler: { (res) in
             
-            guard let result = res["result"] as? String else {
-                return
-            }
+            
         })
     }
     /*
@@ -176,7 +174,7 @@ extension TimerViewController : WCSessionDelegate {
         
         if (name == "gagne"){
             myTimer.invalidate()
-            var score = timerLeft
+            let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -189,7 +187,7 @@ extension TimerViewController : WCSessionDelegate {
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
                                                 Score.shared.InsertScore(name: name!, point: Double(score))
-                                                Score.shared.GetScoreOrdred()
+                                                //Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 
             }

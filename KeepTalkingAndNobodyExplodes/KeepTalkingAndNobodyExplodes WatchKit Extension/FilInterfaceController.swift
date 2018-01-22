@@ -27,8 +27,8 @@ class FilInterfaceController: WKInterfaceController {
         
         if WCSession.isSupported() {
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
         }
         
         
@@ -71,7 +71,7 @@ class FilInterfaceController: WKInterfaceController {
 
         let session = WCSession.default
         
-        session().transferUserInfo(["Game":"perdu"])
+        session.transferUserInfo(["Game":"perdu"])
        
     }
     
@@ -101,7 +101,7 @@ class FilInterfaceController: WKInterfaceController {
             
             let session = WCSession.default
             
-            session().transferUserInfo(["Game":"gagne"])
+            session.transferUserInfo(["Game":"gagne"])
             
         }
     }

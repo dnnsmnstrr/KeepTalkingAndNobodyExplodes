@@ -22,8 +22,8 @@ class FilInfoViewController: UIViewController {
         super.viewDidLoad()
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self 
-            session().activate()
+            session.delegate = self 
+            session.activate()
             
         }
         diode1.layer.cornerRadius = 20
@@ -127,7 +127,7 @@ extension FilInfoViewController : WCSessionDelegate {
         if (name == "gagne"){
             
 //            var score = TimerViewController.init(nibName: nil, bundle: nil).timerLeft
-            var score = timerLeft
+            let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
                 preferredStyle: .alert)
@@ -140,7 +140,7 @@ extension FilInfoViewController : WCSessionDelegate {
                                               style: .default) { (_) in
                                                 let name = alertBox.textFields?[0].text
                                                 Score.shared.InsertScore(name: name!, point: Double(score))
-                                                Score.shared.GetScoreOrdred()
+                                                //Score.shared.GetScoreOrdred()
                                                 self.dismiss(animated: true, completion: nil)
                                                 
             }

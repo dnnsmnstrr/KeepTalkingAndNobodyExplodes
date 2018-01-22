@@ -22,8 +22,8 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         if WCSession.isSupported(){
             let session = WCSession.default
-            session().delegate = self
-            session().activate()
+            session.delegate = self
+            session.activate()
             
         }
         // en attendant d'avoir les vrai score
@@ -44,14 +44,11 @@ class ViewController: UIViewController{
     @IBAction func StartGame(_ sender: Any) {
 
         let session = WCSession.default
-        guard session().isReachable else {
+        guard session.isReachable else {
             return
         }
-        session().sendMessage(["action":"start"], replyHandler: { (res) in
+        session.sendMessage(["action":"start"], replyHandler: { (res) in
             
-            guard let result = res["result"] as? String else {
-                return
-            }
         })
     }
     
