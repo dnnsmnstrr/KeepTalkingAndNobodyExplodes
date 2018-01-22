@@ -138,10 +138,10 @@ extension TimerViewController : WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
-    
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        
-        guard let name = userInfo["Game"] as? String else{
+   
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+
+        guard let name = message["Game"] as? String else{
             return
         }
         

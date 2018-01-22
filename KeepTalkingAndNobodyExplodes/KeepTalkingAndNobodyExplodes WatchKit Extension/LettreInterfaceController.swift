@@ -122,7 +122,8 @@ class LettreInterfaceController: WKInterfaceController {
         VarGlobals.shared.updateNbrEssaie() //prévenir iphone
         
         let session = WCSession.default
-        session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+       // session.transferUserInfo(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"])
+        session.sendMessage(["Game":"essaie\(VarGlobals.shared.nbrEssaie)"], replyHandler: nil, errorHandler: nil)
         
         if(VarGlobals.shared.nbrEssaie > 2){
             
@@ -195,7 +196,7 @@ extension LettreInterfaceController : WCSessionDelegate {
         
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void) {
         if let action = message["action"] as? String {
             if action == "perdu"{
                 let h1 = {  self.dismiss()}
