@@ -143,10 +143,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           
-            //reste a supprimer le score de la BDD
             
-            //self.scoreTableView.deleteRows(at: [indexPath], with: .automatic)
+            let cell = tableView.cellForRow(at: indexPath) as! ScoreTableViewCell
+            
+            
+            //reste a supprimer le score de la BDD
+            Score.shared.DeleteOneScore(cell.nameLabel.text!)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     

@@ -18,7 +18,7 @@ extension Score{
             if let s = NSEntityDescription.insertNewObject(forEntityName: "Score", into: ctx) as? Score{
                 s.name = name
                 s.point = point
-                s.date = NSDate()
+                s.date = NSDate() as Date
                 
             }
             try? ctx.save()
@@ -65,6 +65,21 @@ extension Score{
     
     
     
-    
+    public func DeleteOneScore(_ name: String){
+        let fetchRequest: NSFetchRequest<Score> = Score.fetchRequest()
+        //fetchRequest.predicate = NSPredicate(format:"name ==@", name!)
+        if let ctx = DataManager.shared.objectContext{
+            if let data = try? ctx.fetch(fetchRequest){
+                for item in data{
+                    if item.name == name{
+                        ctx.delete(item)
+                        if let result = try? ctx.save(){
+                            
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
 }
-
