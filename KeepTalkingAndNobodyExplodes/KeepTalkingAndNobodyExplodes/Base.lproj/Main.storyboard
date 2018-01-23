@@ -134,10 +134,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-nQ-VHp">
-                                <rect key="frame" x="120.33333333333333" y="318" width="173.66666666666669" height="100"/>
+                                <rect key="frame" x="105.66666666666669" y="318" width="203" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-aJ-kJ2">
-                                        <rect key="frame" x="0.0" y="24.666666666666689" width="173.66666666666666" height="51.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-aJ-kJ2">
+                                        <rect key="frame" x="0.0" y="24.666666666666689" width="203" height="51.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="43"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -158,7 +158,7 @@
                             <constraint firstItem="Pqq-Wj-kfa" firstAttribute="centerX" secondItem="M1j-Q1-UdL" secondAttribute="centerX" id="ALO-Nh-YG9"/>
                             <constraint firstItem="Kad-nQ-VHp" firstAttribute="centerX" secondItem="M1j-Q1-UdL" secondAttribute="centerX" id="CWl-uT-WLj"/>
                             <constraint firstItem="Pqq-Wj-kfa" firstAttribute="top" secondItem="gdP-DY-bfK" secondAttribute="bottom" constant="8" id="Yk3-8t-xQH"/>
-                            <constraint firstItem="Kad-nQ-VHp" firstAttribute="width" secondItem="M1j-Q1-UdL" secondAttribute="width" multiplier="0.42" id="i2Q-rs-w3a"/>
+                            <constraint firstItem="Kad-nQ-VHp" firstAttribute="width" secondItem="M1j-Q1-UdL" secondAttribute="width" multiplier="0.49" id="i2Q-rs-w3a"/>
                             <constraint firstItem="Kad-nQ-VHp" firstAttribute="centerY" secondItem="M1j-Q1-UdL" secondAttribute="centerY" id="jAE-tm-50T"/>
                         </constraints>
                     </view>
