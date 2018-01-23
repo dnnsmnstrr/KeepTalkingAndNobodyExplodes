@@ -25,6 +25,9 @@ class VarGlobalsIphone {
     func resetVar(){
         nbrEssaie = 0
         nbrReussie = 0
+        timerLeft=120
+        myTimer.invalidate()
+
     }
     
     private init() {}

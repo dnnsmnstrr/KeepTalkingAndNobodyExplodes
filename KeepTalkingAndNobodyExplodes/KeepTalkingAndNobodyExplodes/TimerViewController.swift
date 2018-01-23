@@ -9,6 +9,8 @@
 import UIKit
 import WatchConnectivity
 var timerLeft = 120
+var myTimer: Timer!
+
 
 class TimerViewController: UIViewController {
 
@@ -17,7 +19,6 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var diode3: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     
-    var myTimer: Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +73,6 @@ class TimerViewController: UIViewController {
     }
 
     func gameOver(){
-        myTimer.invalidate()
 
         let alertBox = UIAlertController(title: "Game Over",
                                          message: "Votre ami(e) a péri... Honte sur vous ",
@@ -83,7 +83,6 @@ class TimerViewController: UIViewController {
             
         }
         
-        timerLeft=120
 
         alertBox.addAction(confirmAction)
         
@@ -95,6 +94,8 @@ class TimerViewController: UIViewController {
         }
         session.sendMessage(["action":"perdu"], replyHandler: { (res) in
         })
+        VarGlobalsIphone.shared.resetVar()
+
     }
 }
 
@@ -134,11 +135,9 @@ extension TimerViewController : WCSessionDelegate {
         
         if (name == "perdu"){
              gameOver()
-            VarGlobalsIphone.shared.resetVar()
         }
         
         if (name == "gagne"){
-            myTimer.invalidate()
             let score = timerLeft
             let alertBox = UIAlertController(title: "Sauvegarder le score",
                                              message: "Votre score est de \(score) \nComment vous appelez vous ? ",
@@ -158,7 +157,6 @@ extension TimerViewController : WCSessionDelegate {
             }
             alertBox.addAction(confirmAction)
             self.present(alertBox, animated: true, completion: nil)
-            timerLeft=120
             VarGlobalsIphone.shared.resetVar()
         }
     }

@@ -81,6 +81,7 @@ extension FilInfoViewController : WCSessionDelegate {
         }
         
         if (name == "perdu"){
+            
             let alertBox = UIAlertController(title: "Game Over",
                                              message: "Votre ami(e) a péri... Honte sur vous ",
                                              preferredStyle: .alert)
