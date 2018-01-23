@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-var timerLeft = 120
+var timerLeft = 120000
 var myTimer: Timer!
 
 
@@ -34,7 +34,7 @@ class TimerViewController: UIViewController {
             
         }
         
-        myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
+        myTimer = Timer.scheduledTimer(timeInterval:0.001, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
     }
     
     override func endAppearanceTransition() {
@@ -49,22 +49,19 @@ class TimerViewController: UIViewController {
         }
     }
     
-    func hmsFrom(seconds: Int, completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
-        completion(seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    func getStringFrom(seconds: Int) -> String {
-        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
-    }
+   
     
     @objc func timerRunning() {
+       print("timer")
+        timerLeft=timerLeft-1
+      
        
-        timerLeft-=1
+
+        let ms = timerLeft % 1000
+        let seconds = (timerLeft / 1000) % 60
+        let minutes = timerLeft / 1000 / 60
         
-        let seconds = timerLeft % 60
-        let minutes = (timerLeft / 60) % 60
-        
-        self.timerLabel.text = String(format:"%d:%02d", minutes, seconds)
+        self.timerLabel.text = String(format:"%d:%02d.%0.3d", minutes, seconds,ms)
         
         if timerLeft == 0 {
             gameOver()
