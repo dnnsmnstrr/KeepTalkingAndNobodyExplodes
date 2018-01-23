@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Désamorce la bombe" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqH-xi-TgU">
-                                <rect key="frame" x="126" y="80" width="162" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="116.99999999999999" y="60" width="180.66666666666663" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1h-rB-8me">
-                                <rect key="frame" x="174.66666666666666" y="251" width="65" height="30"/>
+                                <rect key="frame" x="174.66666666666666" y="329" width="65" height="30"/>
                                 <state key="normal" title="Démarrer"/>
                                 <connections>
                                     <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwe-Fg-OER"/>
@@ -37,10 +37,10 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U6g-Ym-dVP">
-                                <rect key="frame" x="0.0" y="321" width="414" height="415"/>
+                                <rect key="frame" x="0.0" y="399" width="414" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCell" id="j8t-zD-rAo" customClass="ScoreTableViewCell" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCell" id="j8t-zD-rAo" customClass="ScoreTableViewCell" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8t-zD-rAo" id="kvN-NY-DC1">
@@ -70,17 +70,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-2B-TL9">
+                                <rect key="frame" x="10" y="103.00000000000001" width="394" height="223.33333333333337"/>
+                                <string key="text">Votre Apple Watch a été trafiquée, une bombe y a été insérer.
+Vous allez devoir, avec l’aide de quelqu’un, la désamorcer avant qu’elle n’explose ! 
+En cliquant sur démarrer vous aurez accès au manuel de désamorçage. 
+Vous êtes l’expert qui permettra de sauver le bras de la personne piéger !
+Attention vous n’avez que deux minutes sinon la bombe explose automatiquement
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Fgx-2B-TL9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5zO-ux-k2m"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U6g-Ym-dVP" secondAttribute="bottom" id="8Tj-Ni-hiP"/>
                             <constraint firstItem="A1h-rB-8me" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BHY-Eq-m2B"/>
-                            <constraint firstItem="A1h-rB-8me" firstAttribute="top" secondItem="DqH-xi-TgU" secondAttribute="bottom" constant="150" id="GLd-Dm-oxC"/>
                             <constraint firstItem="U6g-Ym-dVP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ge8-Oq-aB9"/>
+                            <constraint firstAttribute="trailing" secondItem="Fgx-2B-TL9" secondAttribute="trailing" constant="10" id="GiP-7e-ntm"/>
                             <constraint firstAttribute="trailing" secondItem="U6g-Ym-dVP" secondAttribute="trailing" id="HkQ-Xe-3UH"/>
                             <constraint firstItem="U6g-Ym-dVP" firstAttribute="top" secondItem="A1h-rB-8me" secondAttribute="bottom" constant="40" id="Ty5-dW-evq"/>
                             <constraint firstItem="DqH-xi-TgU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uf6-Pp-z4m"/>
-                            <constraint firstItem="DqH-xi-TgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="aa0-CB-Aqb"/>
+                            <constraint firstItem="DqH-xi-TgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="aa0-CB-Aqb"/>
+                            <constraint firstItem="A1h-rB-8me" firstAttribute="bottom" secondItem="Fgx-2B-TL9" secondAttribute="bottom" multiplier="1.1" id="jFK-zT-8Zo"/>
+                            <constraint firstItem="Fgx-2B-TL9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="sla-ec-nFm"/>
+                            <constraint firstItem="Fgx-2B-TL9" firstAttribute="top" secondItem="DqH-xi-TgU" secondAttribute="bottom" constant="20" id="uzt-Af-jh5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -216,10 +232,17 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-Vy-kV5">
-                                <rect key="frame" x="20" y="327.33333333333331" width="374" height="81.333333333333314"/>
-                                <string key="text">Si en haut rouge alors bleu vert jaune rouge
-Si en haut bleu alors vert bleu jaune rouge
-Si en haut jaune alors jaune rouge vert bleu 
+                                <rect key="frame" x="20" y="225.99999999999997" width="374" height="284.33333333333326"/>
+                                <string key="text">Votre acolyte voit sur son écran 4 carré de couleurs différentes: 
+Un sur le dessus, deux au milieu (un à droite et un autre à gauche) et un dernier en dessous.
+
+La combinaison à effectuer diffère de la couleur positionnée dans le carré du haut
+Si la couleur est Rouge:
+Bleu / Vert / Jaune / Rouge
+Si la couleur est Bleu:
+Vert / Bleu / Jaune / Rouge
+Si la couleur est Jaune:
+Jaune / Rouge / Vert / Bleu
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -260,11 +283,16 @@ Si en haut jaune alors jaune rouge vert bleu
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqH-zM-39c">
-                                <rect key="frame" x="20" y="297" width="374" height="142.33333333333337"/>
-                                <string key="text">Si le numéro du modèle est impair-&gt; cliquer en bas gauche puis en haut droite
-Si le numéro du modèle est pair -&gt; cliquer en haut gauche puis en haut droite
-Si la dernière lettre est X -&gt; cliquer en bas gauche puis en bas droite
-</string>
+                                <rect key="frame" x="20" y="266.66666666666669" width="374" height="203"/>
+                                <mutableString key="text">Pour cette première énigme vous devez trouver le numéro de série de la bombe.
+Si le premier numéro est impair
+La bonne combinaison est $ puis £
+
+Si le premier numéro est pair
+La bonne combinaison est ζ puis £
+
+Si le numéro de Série finit par un X
+La bonne combinaison est $ puis ξ</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -363,10 +391,17 @@ Si la dernière lettre est X -&gt; cliquer en bas gauche puis en bas droite
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-S0-qwT">
-                                <rect key="frame" x="20" y="317.33333333333331" width="374" height="101.66666666666669"/>
-                                <string key="text">Si 2  fils de la même couleur -&gt; couper le deuxième de la même couleur
-Si 3 fils différents -&gt; couper celui du milieu
-Si fil rouge en premier -&gt; couper le premier
+                                <rect key="frame" x="20" y="206.00000000000003" width="374" height="324.66666666666674"/>
+                                <string key="text">ATTENTION ! Si vous vous trompez de fil la bombe explose instantanément !
+Réfléchissez bien ou la personne qui porte la montre risque de finir à la morgue.
+Eloignez vous un peu au cas vous ne soyez pas très malin 
+
+Dans le cas ou deux fils sont de la même couleur:
+Il vous faut couper le deuxième fils de cette couleur
+S’il y a trois fils de couleur différente:
+Couper le fil du milieu
+Regarder bien : Si le premier fil est rouge
+Le premier fil est celui qu’il faut sectionner
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
