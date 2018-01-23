@@ -34,7 +34,7 @@ class TimerViewController: UIViewController {
             
         }
         
-        myTimer = Timer.scheduledTimer(timeInterval:0.001, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
+        myTimer = Timer.scheduledTimer(timeInterval:0.01, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
     }
     
     override func endAppearanceTransition() {
@@ -53,15 +53,15 @@ class TimerViewController: UIViewController {
     
     @objc func timerRunning() {
        print("timer")
-        timerLeft=timerLeft-1
+        timerLeft=timerLeft-10
       
        
 
-        let ms = timerLeft % 1000
+        let ms = timerLeft % 1000/10
         let seconds = (timerLeft / 1000) % 60
         let minutes = timerLeft / 1000 / 60
         
-        self.timerLabel.text = String(format:"%d:%02d.%0.3d", minutes, seconds,ms)
+        self.timerLabel.text = String(format:"%d:%02d.%0.2d", minutes, seconds,ms)
         
         if timerLeft == 0 {
             gameOver()
