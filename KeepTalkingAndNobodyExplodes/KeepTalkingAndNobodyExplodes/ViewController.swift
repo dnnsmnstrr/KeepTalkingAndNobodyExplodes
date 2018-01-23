@@ -17,14 +17,19 @@ class ViewController: UIViewController{
     var textCellIdentifier: String = "idCell"
     var scoreList: [Score] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
         if WCSession.isSupported(){
             let session = WCSession.default
             session.delegate = self
             session.activate()
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         // en attendant d'avoir les vrai score
         self.scoreList = Score.shared.GetScoreOrdred()
         

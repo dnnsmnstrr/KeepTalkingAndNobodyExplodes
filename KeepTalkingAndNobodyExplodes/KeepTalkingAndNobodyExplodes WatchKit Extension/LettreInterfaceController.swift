@@ -37,15 +37,15 @@ class LettreInterfaceController: WKInterfaceController {
             btnLettre4.setTitle("ζ")
             btnLettre3.setTitle("ξ")
         }else if num == 2{
-            btnLettre2.setTitle("£")
-            btnLettre3.setTitle("§")
-            btnLettre1.setTitle("ζ")
-            btnLettre4.setTitle("ξ")
+            btnLettre1.setTitle("£")
+            btnLettre2.setTitle("§")
+            btnLettre4.setTitle("ζ")
+            btnLettre3.setTitle("ξ")
         }else{
-            btnLettre2.setTitle("£")
-            btnLettre3.setTitle("§")
-            btnLettre1.setTitle("ζ")
-            btnLettre4.setTitle("ξ")
+            btnLettre1.setTitle("£")
+            btnLettre2.setTitle("§")
+            btnLettre4.setTitle("ζ")
+            btnLettre3.setTitle("ξ")
         }
     }
 
