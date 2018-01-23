@@ -22,6 +22,9 @@ class FilInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        
+        
+        
         if num == 1 {
             fil1.setBackgroundColor(UIColor.blue)
             fil2.setBackgroundColor(UIColor.red)
@@ -159,6 +162,7 @@ extension FilInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
+            print(action)
             if action == "perdu"{
                 let h0 = {
                     self.dismiss()
@@ -166,8 +170,10 @@ extension FilInterfaceController : WCSessionDelegate {
             
                 let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
                 
-                presentAlert(withTitle: "Bravo, bombe désamorcer", message: "", preferredStyle: .actionSheet, actions: [action])
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
             }
+        }else{
+            print("game over not working")
         }
     }
 }

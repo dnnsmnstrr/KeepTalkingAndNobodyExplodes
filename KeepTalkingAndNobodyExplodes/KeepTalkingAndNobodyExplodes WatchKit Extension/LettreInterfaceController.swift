@@ -25,6 +25,12 @@ class LettreInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        if WCSession.isSupported(){
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        
         if num == 1 {
             btnLettre1.setTitle("£")
             btnLettre2.setTitle("§")
@@ -166,6 +172,7 @@ class LettreInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+                
     }
 
 }
@@ -174,12 +181,18 @@ extension LettreInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
+            print(action)
             if action == "perdu"{
-                let h1 = {  self.dismiss()}
-                let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
-
-                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
+                let h0 = {
+                    self.dismiss()
+                }
+                
+                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+                
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
             }
+        }else{
+            print("game over not working")
         }
     }
 }

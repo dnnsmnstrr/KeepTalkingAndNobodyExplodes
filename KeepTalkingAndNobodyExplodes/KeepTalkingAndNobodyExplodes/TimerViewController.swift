@@ -79,6 +79,8 @@ class TimerViewController: UIViewController {
                                          preferredStyle: .alert)
         //valisation
         let confirmAction = UIAlertAction(title: "J'ai honte", style: .cancel) {(_)in
+            
+           
             self.dismiss(animated: true, completion: {})
             
         }
@@ -87,14 +89,19 @@ class TimerViewController: UIViewController {
         alertBox.addAction(confirmAction)
         
         self.present(alertBox, animated: true, completion: nil)
-        
         let session = WCSession.default
         guard session.isReachable else {
+            print("ggg")
             return
         }
+        print("before")
         session.sendMessage(["action":"perdu"], replyHandler: { (res) in
         })
+        print("after")
+        
         VarGlobalsIphone.shared.resetVar()
+        
+       
 
     }
 }

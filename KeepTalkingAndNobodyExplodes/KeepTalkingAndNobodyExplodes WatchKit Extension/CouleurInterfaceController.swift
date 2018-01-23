@@ -24,6 +24,8 @@ class CouleurInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        
     
         if num == 1 {
             btn1.setBackgroundColor(UIColor.red)
@@ -194,14 +196,18 @@ extension CouleurInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
+            print(action)
             if action == "perdu"{
-                let h1 = {
+                let h0 = {
                     self.dismiss()
                 }
                 
-                let actionBack = WKAlertAction(title: "ok", style: .default, handler:h1)
-                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [actionBack])
+                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+                
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
             }
+        }else{
+            print("game over not working")
         }
     }
 }

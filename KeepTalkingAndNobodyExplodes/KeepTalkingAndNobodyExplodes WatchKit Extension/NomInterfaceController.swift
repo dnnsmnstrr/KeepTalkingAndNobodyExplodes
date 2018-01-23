@@ -19,6 +19,8 @@ class NomInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+       
+        
         if num == 2 {
              id = "\(num)M-T"
         }else if num == 1{
@@ -42,14 +44,20 @@ class NomInterfaceController: WKInterfaceController {
 }
 extension NomInterfaceController : WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
+            print(action)
             if action == "perdu"{
-                let h1 = {  self.dismiss()}
-                let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
-                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
+                let h0 = {
+                    self.dismiss()
+                }
+                
+                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+                
+                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
             }
+        }else{
+            print("game over not working")
         }
     }
 }
