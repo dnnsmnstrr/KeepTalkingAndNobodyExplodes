@@ -23,21 +23,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Désamorce la bombe" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqH-xi-TgU">
-                                <rect key="frame" x="116.99999999999999" y="60" width="180.66666666666663" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="89" y="30" width="237" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1h-rB-8me">
-                                <rect key="frame" x="174.66666666666666" y="329" width="65" height="30"/>
-                                <state key="normal" title="Démarrer"/>
+                                <rect key="frame" x="187.66666666666666" y="260.66666666666669" width="39" height="30"/>
+                                <state key="normal" title="Jouer"/>
                                 <connections>
                                     <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwe-Fg-OER"/>
                                     <segue destination="ydK-ap-pc3" kind="show" id="pR0-8H-3h3"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U6g-Ym-dVP">
-                                <rect key="frame" x="0.0" y="399" width="414" height="337"/>
+                                <rect key="frame" x="0.0" y="310.66666666666674" width="414" height="425.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCell" id="j8t-zD-rAo" customClass="ScoreTableViewCell" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target">
@@ -70,13 +70,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-2B-TL9">
-                                <rect key="frame" x="10" y="103.00000000000001" width="394" height="223.33333333333337"/>
-                                <string key="text">Votre Apple Watch a été trafiquée, une bombe y a été insérer.
-Vous allez devoir, avec l’aide de quelqu’un, la désamorcer avant qu’elle n’explose ! 
-En cliquant sur démarrer vous aurez accès au manuel de désamorçage. 
-Vous êtes l’expert qui permettra de sauver le bras de la personne piéger !
-Attention vous n’avez que deux minutes sinon la bombe explose automatiquement
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-2B-TL9">
+                                <rect key="frame" x="10" y="81.333333333333329" width="394" height="182.66666666666669"/>
+                                <string key="text">Votre Apple Watch a été trafiquée, une bombe y a été insérer. Vous allez devoir, avec l’aide de quelqu’un, la désamorcer avant qu’elle n’explose ! En cliquant sur démarrer vous aurez accès au manuel de désamorçage. Vous êtes l’expert qui permettra de sauver le bras de la personne piéger ! Attention vous n’avez que deux minutes sinon la bombe explose automatiquement
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -91,9 +87,9 @@ Attention vous n’avez que deux minutes sinon la bombe explose automatiquement
                             <constraint firstItem="U6g-Ym-dVP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ge8-Oq-aB9"/>
                             <constraint firstAttribute="trailing" secondItem="Fgx-2B-TL9" secondAttribute="trailing" constant="10" id="GiP-7e-ntm"/>
                             <constraint firstAttribute="trailing" secondItem="U6g-Ym-dVP" secondAttribute="trailing" id="HkQ-Xe-3UH"/>
-                            <constraint firstItem="U6g-Ym-dVP" firstAttribute="top" secondItem="A1h-rB-8me" secondAttribute="bottom" constant="40" id="Ty5-dW-evq"/>
+                            <constraint firstItem="U6g-Ym-dVP" firstAttribute="top" secondItem="A1h-rB-8me" secondAttribute="bottom" constant="20" id="Ty5-dW-evq"/>
                             <constraint firstItem="DqH-xi-TgU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uf6-Pp-z4m"/>
-                            <constraint firstItem="DqH-xi-TgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="aa0-CB-Aqb"/>
+                            <constraint firstItem="DqH-xi-TgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="aa0-CB-Aqb"/>
                             <constraint firstItem="A1h-rB-8me" firstAttribute="bottom" secondItem="Fgx-2B-TL9" secondAttribute="bottom" multiplier="1.1" id="jFK-zT-8Zo"/>
                             <constraint firstItem="Fgx-2B-TL9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="sla-ec-nFm"/>
                             <constraint firstItem="Fgx-2B-TL9" firstAttribute="top" secondItem="DqH-xi-TgU" secondAttribute="bottom" constant="20" id="uzt-Af-jh5"/>
@@ -232,11 +228,12 @@ Attention vous n’avez que deux minutes sinon la bombe explose automatiquement
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-Vy-kV5">
-                                <rect key="frame" x="20" y="225.99999999999997" width="374" height="284.33333333333326"/>
+                                <rect key="frame" x="20" y="215.99999999999997" width="374" height="304.33333333333326"/>
                                 <string key="text">Votre acolyte voit sur son écran 4 carré de couleurs différentes: 
 Un sur le dessus, deux au milieu (un à droite et un autre à gauche) et un dernier en dessous.
 
 La combinaison à effectuer diffère de la couleur positionnée dans le carré du haut
+
 Si la couleur est Rouge:
 Bleu / Vert / Jaune / Rouge
 Si la couleur est Bleu:
@@ -248,15 +245,23 @@ Jaune / Rouge / Vert / Bleu
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À Propos des Couleurs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-eJ-Mwk">
+                                <rect key="frame" x="80.333333333333314" y="108" width="254" height="31.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.54905989249999998" blue="0.37592337479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XMK-Vy-kV5" secondAttribute="trailing" constant="20" id="8Sg-Lk-LqP"/>
+                            <constraint firstItem="YLd-eJ-Mwk" firstAttribute="top" secondItem="5RD-c9-zeM" secondAttribute="bottom" constant="40" id="9nv-rW-geU"/>
                             <constraint firstItem="5RD-c9-zeM" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="9ya-VP-WSJ"/>
                             <constraint firstItem="XMK-Vy-kV5" firstAttribute="leading" secondItem="wpf-pM-127" secondAttribute="leading" constant="20" id="CGU-NK-B7P"/>
                             <constraint firstItem="XMK-Vy-kV5" firstAttribute="centerY" secondItem="wpf-pM-127" secondAttribute="centerY" id="MFG-px-Y3t"/>
                             <constraint firstItem="XMK-Vy-kV5" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="MIO-QF-KBd"/>
                             <constraint firstItem="5RD-c9-zeM" firstAttribute="top" secondItem="NVB-5P-7oo" secondAttribute="bottom" constant="8" id="YgR-hC-qdv"/>
+                            <constraint firstItem="YLd-eJ-Mwk" firstAttribute="centerX" secondItem="wpf-pM-127" secondAttribute="centerX" id="xhW-24-luu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Couleur" image="couleur" id="TII-yK-dMH"/>
@@ -270,7 +275,7 @@ Jaune / Rouge / Vert / Bleu
             </objects>
             <point key="canvasLocation" x="1187" y="810"/>
         </scene>
-        <!--Lettre-->
+        <!--Symboles-->
         <scene sceneID="XCz-Kf-UGK">
             <objects>
                 <viewController id="CQg-5v-aUd" customClass="LettreInfoViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
@@ -283,16 +288,17 @@ Jaune / Rouge / Vert / Bleu
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqH-zM-39c">
-                                <rect key="frame" x="20" y="266.66666666666669" width="374" height="203"/>
+                                <rect key="frame" x="20" y="256.66666666666669" width="374" height="223.33333333333331"/>
                                 <mutableString key="text">Pour cette première énigme vous devez trouver le numéro de série de la bombe.
+
 Si le premier numéro est impair
-La bonne combinaison est $ puis £
+La bonne combinaison est ξ puis §
 
 Si le premier numéro est pair
-La bonne combinaison est ζ puis £
+La bonne combinaison est £ puis §
 
 Si le numéro de Série finit par un X
-La bonne combinaison est $ puis ξ</mutableString>
+La bonne combinaison est ξ puis ζ</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -326,18 +332,26 @@ La bonne combinaison est $ puis ξ</mutableString>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À Propos des Symboles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-Wa-kfm">
+                                <rect key="frame" x="75" y="108" width="264" height="31.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.97174556400000001" green="1" blue="0.99344677510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0Mz-OV-bNk" firstAttribute="top" secondItem="B9p-0e-BnT" secondAttribute="bottom" constant="8" id="AWO-mt-aUi"/>
                             <constraint firstItem="KqH-zM-39c" firstAttribute="leading" secondItem="zLq-fm-fNa" secondAttribute="leading" constant="20" id="BgZ-4L-Rdu"/>
+                            <constraint firstItem="FbC-Wa-kfm" firstAttribute="top" secondItem="0Mz-OV-bNk" secondAttribute="bottom" constant="40" id="EcP-jG-jFG"/>
+                            <constraint firstItem="FbC-Wa-kfm" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="JQQ-8L-Jnz"/>
                             <constraint firstItem="KqH-zM-39c" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="gQC-0x-BUo"/>
                             <constraint firstItem="0Mz-OV-bNk" firstAttribute="centerX" secondItem="zLq-fm-fNa" secondAttribute="centerX" id="nxZ-ua-PFt"/>
                             <constraint firstAttribute="trailing" secondItem="KqH-zM-39c" secondAttribute="trailing" constant="20" id="xlG-9I-Eiw"/>
                             <constraint firstItem="KqH-zM-39c" firstAttribute="centerY" secondItem="zLq-fm-fNa" secondAttribute="centerY" id="ytV-wG-LPy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lettre" image="letter" id="UFa-S3-hcd"/>
+                    <tabBarItem key="tabBarItem" title="Symboles" image="letter" id="UFa-S3-hcd"/>
                     <connections>
                         <outlet property="diode1" destination="KWf-Im-Mhj" id="lFD-hl-KEo"/>
                         <outlet property="diode2" destination="3Ci-DZ-ajN" id="4Ca-Iy-bUE"/>
@@ -349,7 +363,7 @@ La bonne combinaison est $ puis ξ</mutableString>
             </objects>
             <point key="canvasLocation" x="1187" y="68"/>
         </scene>
-        <!--Fil-->
+        <!--Fils-->
         <scene sceneID="4UG-C8-fzT">
             <objects>
                 <viewController id="BUg-EB-kLN" customClass="FilInfoViewController" customModule="KeepTalkingAndNobodyExplodes" customModuleProvider="target" sceneMemberID="viewController">
@@ -407,10 +421,18 @@ Le premier fil est celui qu’il faut sectionner
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À Propos des Fils" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVJ-Eu-BgR">
+                                <rect key="frame" x="111.33333333333333" y="108" width="191.33333333333337" height="31.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lvN-S0-qwT" firstAttribute="centerY" secondItem="luB-Jh-wxd" secondAttribute="centerY" id="1CD-gg-1jj"/>
+                            <constraint firstItem="EVJ-Eu-BgR" firstAttribute="top" secondItem="aXK-FM-KiX" secondAttribute="bottom" constant="40" id="82g-C4-3fY"/>
+                            <constraint firstItem="EVJ-Eu-BgR" firstAttribute="centerX" secondItem="luB-Jh-wxd" secondAttribute="centerX" id="I2d-8u-IyD"/>
                             <constraint firstItem="lvN-S0-qwT" firstAttribute="leading" secondItem="luB-Jh-wxd" secondAttribute="leading" constant="20" id="Lll-XF-a09"/>
                             <constraint firstAttribute="trailing" secondItem="lvN-S0-qwT" secondAttribute="trailing" constant="20" id="Qms-yR-3qg"/>
                             <constraint firstItem="aXK-FM-KiX" firstAttribute="centerX" secondItem="luB-Jh-wxd" secondAttribute="centerX" id="UFT-AW-WgI"/>
@@ -418,7 +440,7 @@ Le premier fil est celui qu’il faut sectionner
                             <constraint firstItem="aXK-FM-KiX" firstAttribute="top" secondItem="Ijl-ub-9bf" secondAttribute="bottom" constant="8" id="vbC-jf-BSe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fil" image="fil" id="haJ-fz-zaG"/>
+                    <tabBarItem key="tabBarItem" title="Fils" image="fil" id="haJ-fz-zaG"/>
                     <connections>
                         <outlet property="diode1" destination="g6g-pk-4qE" id="eCp-Ll-Ggl"/>
                         <outlet property="diode2" destination="aTt-SI-lES" id="wtZ-HG-yiK"/>
