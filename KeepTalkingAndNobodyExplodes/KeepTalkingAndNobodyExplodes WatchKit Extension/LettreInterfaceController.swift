@@ -118,16 +118,23 @@ class LettreInterfaceController: WKInterfaceController {
     }
     
     func gameOver(){
-        let h1 = {  self.dismiss()}
-        let action1 = WKAlertAction(title: "ok", style: .default, handler:h1)
-
-        presentAlert(withTitle: "Game Over", message: "", preferredStyle: .alert, actions: [action1])
-        let session = WCSession.default
-        guard session.isReachable else {
-            return
-        }
-        session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
-        VarGlobals.shared.resetVar()
+        let action = WKAlertAction(title: "Ok", style: .default, handler: {
+            self.dismiss()
+            
+            let session = WCSession.default
+            guard session.isReachable else {
+                return
+            }
+            session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+            VarGlobals.shared.resetVar()
+            
+            DispatchQueue.main.async {
+                self.presentController(withName: "StartInterfaceController", context: nil)
+            }
+        })
+        
+        presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
+        
     }
     
     @IBAction func ClickLettre1() {
@@ -181,18 +188,9 @@ extension LettreInterfaceController : WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let action = message["action"] as? String {
-            print(action)
             if action == "perdu"{
-                let h0 = {
-                    self.dismiss()
-                }
-                
-                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
-                
-                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
+               gameOver()
             }
-        }else{
-            print("game over not working")
         }
     }
 }

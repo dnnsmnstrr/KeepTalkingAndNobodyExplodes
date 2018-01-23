@@ -47,20 +47,24 @@ class FilInterfaceController: WKInterfaceController {
         fil2.setEnabled(false)
         fil3.setEnabled(false)
         
-        let h0 = {
+        let action = WKAlertAction(title: "Ok", style: .default, handler: {
             self.dismiss()
-        }
-        
-        let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+            
+            let session = WCSession.default
+            guard session.isReachable else {
+                return
+            }
+            session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+            VarGlobals.shared.resetVar()
+            
+            DispatchQueue.main.async {
+                self.presentController(withName: "StartInterfaceController", context: nil)
+            }
+        })
         
         presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
-
-        let session = WCSession.default
-        guard session.isReachable else {
-            return
-        }
-        session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
-        VarGlobals.shared.resetVar()
+        
+        
     }
     
     func upReussi(){
@@ -164,13 +168,7 @@ extension FilInterfaceController : WCSessionDelegate {
         if let action = message["action"] as? String {
             print(action)
             if action == "perdu"{
-                let h0 = {
-                    self.dismiss()
-                }
-            
-                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
-                
-                presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
+               fail()
             }
         }else{
             print("game over not working")

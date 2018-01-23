@@ -48,13 +48,23 @@ extension NomInterfaceController : WCSessionDelegate {
         if let action = message["action"] as? String {
             print(action)
             if action == "perdu"{
-                let h0 = {
+                let action = WKAlertAction(title: "Ok", style: .default, handler: {
                     self.dismiss()
-                }
-                
-                let action = WKAlertAction(title: "Ok", style: .default, handler:h0)
+                    
+                    let session = WCSession.default
+                    guard session.isReachable else {
+                        return
+                    }
+                    session.sendMessage(["Game":"perdu"], replyHandler: nil, errorHandler: nil)
+                    VarGlobals.shared.resetVar()
+                    
+                    DispatchQueue.main.async {
+                        self.presentController(withName: "StartInterfaceController", context: nil)
+                    }
+                })
                 
                 presentAlert(withTitle: "Game Over", message: "", preferredStyle: .actionSheet, actions: [action])
+                
             }
         }else{
             print("game over not working")
